@@ -5,7 +5,7 @@ const gatosArray = rescatados.gatos;
 let controller = {
     index: function(req, res) {
         
-        return res.render('index', {perrosArray});
+        return res.render('index', {perrosArray, gatosArray});
     },
 
     register: function(req, res){
