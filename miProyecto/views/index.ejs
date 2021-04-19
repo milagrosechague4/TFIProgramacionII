@@ -38,7 +38,7 @@
 				<section class="product-box">
 					<a href="/product/<%= perros.id %>">
 						<figure class="product-box_image">
-							<img src="<%= perros.img %>" alt="cafetera moulinex">
+							<img src="/images/products/<%= perros.img %>" alt="cafetera moulinex">
 						</figure>
 						<article class="product-box_data">
 							<h2> <%=perros.nombre%> </h2>
@@ -63,12 +63,12 @@
 				<section class="product-box">
 					<a href="/product">
 						<figure class="product-box_image">
-							<img src="<%= gatos.img %>" alt="cafetera moulinex">
+							<img src="/images/products/<%= gatos.img %>" alt="cafetera moulinex">
 						</figure>
 						<article class="product-box_data">
 							<h2><%= gatos.nombre %></h2>
 							<p><%= gatos.descripcion %> </p>
-							<p><%= gatos.edad %></p>
+							<p><%= gatos.años %></p>
 						</article>
 					</a>
 				</section>
