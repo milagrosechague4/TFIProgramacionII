@@ -1,4 +1,5 @@
 const rescatados = require('../modulos/rescatados');
+const { search } = require('../routes');
 const perrosArray = rescatados.perros;
 const gatosArray = rescatados.gatos;
 
