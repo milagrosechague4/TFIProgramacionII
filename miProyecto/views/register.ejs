@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="./css/bootstrap-grid.min.css">
 	<!-- Own Stylesheet -->
 	<link rel="stylesheet" href="./css/app.css">
+	<link rel="stylesheet" href="./css/register.css">
 </head>
 
 <body>
@@ -22,70 +23,48 @@
 	<!-- /Header -->
 
 	<!-- Novedades -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
+	<div class="container">
+
+		<div class="inicio-sesion">   
+			<div class="Registrate">
 				<h2 class="products-title">Registrate</h2>
 			</div>
-			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> <div class="form">
-      
-				<ul class="tab-group">
-				  <li class="tab active"><a href="#signup">Sign Up</a></li>
-				  <li class="tab"><a href="#login">Log In</a></li>
-				</ul>
-				
-				<div class="tab-content">
-				  <div id="signup">   
-					<h1>Sign Up for Free</h1>
-					
-					<form action="/" method="post">
-					
-					<div class="top-row">
-					  <div class="field-wrap">
-						<label>
-						  First Name<span class="req">*</span>
-						</label>
-						<input type="text" required autocomplete="off" />
-					  </div>
-				  
-					  <div class="field-wrap">
-						<label>
-						  Last Name<span class="req">*</span>
-						</label>
-						<input type="text"required autocomplete="off"/>
-					  </div>
-					</div>
-					<div class="top-row">
-						<div class="field-wrap">
-						  <label>
-							Año de nacimiento <span class="req">*</span>
-						  </label>
-						  <input type="number" required autocomplete="off" />
-						</div>
-					
-		  
-					<div class="field-wrap">
-					  <label>
-						Email Address<span class="req">*</span>
-					  </label>
-					  <input type="email"required autocomplete="off"/>
-					</div>
-					
-					<div class="field-wrap">
-					  <label>
-						Set A Password<span class="req">*</span>
-					  </label>
-					  <input type="password"required autocomplete="off"/>
-					</div>
-					
-					<button type="submit" class="button button-block"/>Get Started</button>
-					
-					</form>
-		  
-				  </div>
-			</h2>
+						
+			<form action="/" method="post">
 
+				<div class="filas">
+					<div class="fila">
+						<label>
+							Complete Name<span class="req">*</span>
+						</label>
+						<input type="text"  />
+					</div>	
+					<div class="fila">
+						<label>
+								Año de nacimiento <span class="req">*</span>
+						</label>
+						<input type="number"  />
+					</div>
+					<div class="fila">
+						<label>
+							Email Address<span class="req">*</span>
+						</label>
+						<input type="email"/>
+					</div>
+					<div class="fila">
+						<label>
+							Set A Password<span class="req">*</span>
+						</label>
+						<input type="password"/>
+					</div>
+				</div>			
+				<button type="submit" class="button button-block"/>Get Started</button>
+						
+			</form>
+			
+		</div>
+			
+	</div>
 
 	<!-- footer -->
 	<%- include('./partials/footer')%>
