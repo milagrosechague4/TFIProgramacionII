@@ -7,15 +7,16 @@ module.exports = {
    //     return res.render('product');
    // },
 
-    id : (req, res)=> {
-        let id = req.params.id
-
+    show : (req, res)=> {
+        let id = req.params.id;
+        let perro;
+        
         for(let i = 0; i < perrosArray.length; i++){
             if(perrosArray[i].id == id){
-                let perro = perrosArray[i]
-                return res.render('product', {perro});
+                perro = perrosArray[i]
             } 
         }
+        return res.render('product', {perro});
     }
 }
 
