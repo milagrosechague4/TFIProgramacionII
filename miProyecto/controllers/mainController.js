@@ -23,7 +23,7 @@ let controller = {
     },
 
     register: function(req, res){
-        return res.render('register', {title: 'hola'})
+        return res.render('register', {title: 'Registrarse'})
     },
 
     login: function(req, res) {
@@ -31,8 +31,22 @@ let controller = {
     },
 
     search: function(req, res) {
-        return res.render('search-results', { title: 'Buscador' });
+       
+
+        let perroArray = [];
+        let gatoArray = [];
+
+        animalesArray.forEach(element =>{
+            if (element.class == 0){
+                perroArray.push(element)
+            } else {
+                gatoArray.push(element)
+            }
+        })
+
+        return res.render('search-results', { perroArray });
     },
+    
 
     
 }
