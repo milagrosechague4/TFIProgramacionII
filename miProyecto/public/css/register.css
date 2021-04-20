@@ -9,7 +9,7 @@
   margin-bottom: 10px;
 }
 .inicio-sesion {
-	width: 60%;
+	width: 50%;
 	left: 76px;
 	background-color: rgba(154, 162, 230, 0.548);
 	border-radius: 10px;
@@ -28,4 +28,7 @@
 }
 button{
   margin-left: 43%;
+}
+.filas{
+  margin-left: 5px;
 }
