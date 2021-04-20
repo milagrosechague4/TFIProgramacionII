@@ -1,12 +1,22 @@
 const rescatados = require('../modulos/rescatados');
-const { search } = require('../routes');
-const perrosArray = rescatados.perros;
-const gatosArray = rescatados.gatos;
+const animalesArray = rescatados.animales;
+
 
 let controller = {
     index: function(req, res) {
         
-        return res.render('index', {perrosArray, gatosArray});
+        let perroArray = [];
+        let gatoArray = [];
+
+        animalesArray.forEach(element =>{
+            if (element.class == 0){
+                perroArray.push(element)
+            } else {
+                gatoArray.push(element)
+            }
+        })
+
+        return res.render('index', {perroArray, gatoArray});
     },
 
     register: function(req, res){

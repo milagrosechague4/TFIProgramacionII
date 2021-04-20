@@ -1,6 +1,6 @@
 const rescatados = require('../modulos/rescatados');
-const perrosArray = rescatados.perros;
-const gatosArray = rescatados.gatos;
+const animalesArray = rescatados.animales;
+
 
 module.exports = { 
    // index: function(req, res) {
@@ -9,14 +9,16 @@ module.exports = {
 
     show : (req, res)=> {
         let id = req.params.id;
-        let perro;
+        let rescatado;
+       
         
-        for(let i = 0; i < perrosArray.length; i++){
-            if(perrosArray[i].id == id){
-                perro = perrosArray[i]
+        for(let i = 0; i < animalesArray.length; i++){
+            if(animalesArray[i].id == id){
+                rescatado = animalesArray[i]
             } 
         }
-        return res.render('product', {perro});
+       
+        return res.render('product', {rescatado});
     }
 }
 
