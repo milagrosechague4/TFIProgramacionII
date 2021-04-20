@@ -8,7 +8,7 @@
   }
   .inicio-sesion {
       top: 130px;
-      width: 60%;
+      width: 40%;
       left: 76px;
       background-color: rgba(154, 162, 230, 0.548);
       border-radius: 10px;
@@ -17,12 +17,12 @@
     }
   
   .inicio-sesion label{
-      margin-left: 70px;
+      
     font-size: 20px;
   }
   .fila{
     display: grid;
-    grid-template-columns: 170px 200px;
+    grid-template-columns: 100px 200px;
     margin-bottom: 10px;
   }
   .filas{
