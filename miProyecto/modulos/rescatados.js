@@ -31,7 +31,7 @@ let rescatados = {
                 id: 4,
                 class: 1,
                 img: 'puppy_4.JPG',
-                nombre: "Diego",
+                nombre: "El Diegote",
                 años: 2,
                 descripcion: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque delectus ex",
                            

@@ -2,7 +2,7 @@ const rescatados = require('../modulos/rescatados');
 const animalesArray = rescatados.animales;
 
 const usuarios = require('../modulos/usuarios')
-const usuariosArray = usuarios.usuarios
+const usuariosArray = usuarios.index
 
 
 module.exports = { 
