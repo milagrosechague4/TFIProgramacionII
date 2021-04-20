@@ -1,6 +1,9 @@
 const rescatados = require('../modulos/rescatados');
 const animalesArray = rescatados.animales;
 
+const usuarios = require('../modulos/usuarios')
+const usuariosArray = usuarios.usuarios
+
 
 module.exports = { 
    // index: function(req, res) {
@@ -10,7 +13,8 @@ module.exports = {
     show : (req, res)=> {
         let id = req.params.id;
         let rescatado;
-       
+        let usuario = usuariosArray[i]
+
         
         for(let i = 0; i < animalesArray.length; i++){
             if(animalesArray[i].id == id){
@@ -18,7 +22,19 @@ module.exports = {
             } 
         }
        
-        return res.render('product', {rescatado});
+        return res.render('product', {rescatado, usuario});
+    },
+
+    users: function(req, res){
+        let id = req.params.id
+        let usuario ;
+
+        for(let i = 0; i < usuariosArray.length; i++){
+            if(usuariosArray[i].id == id){
+                usuario = usuariosArray[i]
+            } 
+        }
+        return res.render('profile', {usuario})
     }
 }
 

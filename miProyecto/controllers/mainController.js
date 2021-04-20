@@ -1,6 +1,9 @@
 const rescatados = require('../modulos/rescatados');
 const animalesArray = rescatados.animales;
 
+const usuarios = require('../modulos/usuarios')
+const usuariosArray = usuarios.usuarios
+
 
 let controller = {
     index: function(req, res) {
@@ -29,7 +32,9 @@ let controller = {
 
     search: function(req, res) {
         return res.render('search-results', { title: 'Buscador' });
-    }
+    },
+
+    
 }
 
 module.exports = controller;
