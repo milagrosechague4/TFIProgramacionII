@@ -58,7 +58,7 @@ let rescatados = {
                 id: 7,
                 class: 0,
                 img: 'kitten_3.JPG',
-                nombre: "Bigotes",
+                nombre: "Palta",
                 años: 1,
                 descripcion: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque delectus ex",
                     
@@ -67,7 +67,7 @@ let rescatados = {
                 id: 8,
                 class: 0,
                 img: 'kitten_4.JPG',
-                nombre: "Bigotes",
+                nombre: "Jenny",
                 años: 1,
                 descripcion: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque delectus ex",
                          
