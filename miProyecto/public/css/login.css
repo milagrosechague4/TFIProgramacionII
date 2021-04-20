@@ -1,0 +1,35 @@
+.products-title {
+    margin-left: 210px;
+  }
+  .iniciar-sesion h2{
+    color: black;
+    text-align: center;
+    margin-left: 0px;
+  }
+  .inicio-sesion {
+      top: 130px;
+      width: 60%;
+      left: 76px;
+      background-color: rgba(154, 162, 230, 0.548);
+      border-radius: 10px;
+        padding-bottom: 10px;
+        margin: auto;
+    }
+  
+  .inicio-sesion label{
+      margin-left: 70px;
+    font-size: 20px;
+  }
+  .fila{
+    display: grid;
+    grid-template-columns: 170px 200px;
+    margin-bottom: 10px;
+  }
+  .filas{
+      margin-bottom: 20px;
+      margin-left: 60px;
+  }
+  button{
+    margin-left: 42%;
+  }
+  

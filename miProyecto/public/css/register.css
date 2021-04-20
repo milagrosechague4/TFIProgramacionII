@@ -3,9 +3,12 @@
 }
 .Registrate h2{
   color: black;
+  text-align: center;
+  margin-left: 0px;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 .inicio-sesion {
-	top: 130px;
 	width: 60%;
 	left: 76px;
 	background-color: rgba(154, 162, 230, 0.548);
@@ -24,5 +27,5 @@
   margin-bottom: 5px;
 }
 button{
-  margin-left: 41%;
+  margin-left: 43%;
 }
