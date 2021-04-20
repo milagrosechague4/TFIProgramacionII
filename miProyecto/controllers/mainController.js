@@ -2,7 +2,7 @@ const rescatados = require('../modulos/rescatados');
 const animalesArray = rescatados.animales;
 
 const usuarios = require('../modulos/usuarios')
-const usuariosArray = usuarios.usuarios
+const usuariosArray = usuarios.index
 
 
 let controller = {
@@ -57,7 +57,7 @@ let controller = {
                 usuario = usuariosArray[i]
             } 
         }
-        return res.render('profile', {usuario})
+        return res.render('profile', {title: 'users'})
     }
 }
 
