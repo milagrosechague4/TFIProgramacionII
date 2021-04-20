@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link width="" rel="shortcut icon" href="./images/PetFinder_logo.jpeg" />
+	<link width="" rel="shortcut icon" href="./images/logo-mercado-liebre.jpg" />
 	
 	<title>PetFinder</title>
 			<!-- Font Awesome Stylesheet -->
@@ -22,7 +22,7 @@
 	
 	<!-- Banner -->
 	<div class="banner">
-		<img src="images/img-home-banner1.jpg" alt="Banner de ofertas">
+		<img src="images/img-home-banner.jpg" alt="Banner de ofertas">
 	</div>
 	<!-- /Banner -->
 
@@ -33,7 +33,7 @@
 				<h2 class="products-title">Novedades</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<%  for(let i=0; i<perroArray.length; i++){  let perros = perroArray[i] %>
+			<%  for(let i=0; i<perrosArray.length; i++){  let perros = perrosArray[i] %>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
 					<a href="/product/<%= perros.id %>">
@@ -58,14 +58,14 @@
 				<h2 class="products-title">Más comentados</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<%  for(let i=0; i<gatoArray.length; i++){  let gatos = gatoArray[i] %>
+			<%  for(let i=0; i<gatosArray.length; i++){  let gatos = gatosArray[i] %>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
-					<figure class="product-box_image">
-						<img class= "w-100" src="/images/products/<%= gatos.img %>" alt="cafetera moulinex">
-					</figure>
-					<a href="/product/<%= gatos.id %>">
+					<a href="/product">
 						<article class="product-box_data">
+							<figure class="product-box_image">
+								<img class= "w-100" src="/images/products/<%= gatos.img %>" alt="cafetera moulinex">
+							</figure>
 							<h2><%= gatos.nombre %></h2>
 							<p><%= gatos.descripcion %> </p>
 							<p><%= gatos.años %></p>
