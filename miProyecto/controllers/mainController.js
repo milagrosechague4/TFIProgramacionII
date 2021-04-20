@@ -29,7 +29,7 @@ let controller = {
     login: function(req, res) {
         return res.render('login', { title: 'Iniciar Secion' });
     },
-
+    
     search: function(req, res) {
        
 
@@ -46,8 +46,6 @@ let controller = {
 
         return res.render('search-results', { perroArray });
     },
-    
-
     users: function(req, res){
         let id = req.params.id
         let usuario ;

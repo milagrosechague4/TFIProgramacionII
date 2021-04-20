@@ -28,7 +28,10 @@ module.exports = {
        
         return res.render('product', {rescatado, usuario});
     },
-
+    add : (req,res)=> {
+        return res.render('product-add', {title : 'add'})
+    }
+    
     
 }
 
