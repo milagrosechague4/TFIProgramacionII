@@ -69,7 +69,7 @@ let rescatados = {
                 img: 'kitten_4.JPG',
                 nombre: "Jenny",
                 años: 1,
-                descripcion: "Hola! mi nombre es Jenny. Me gusta dar carino, voy a hacerte mucha compania, seguirte por toda la casa y por supuesto dormir con vos! Busco a mi dueno!",
+                descripcion: "Hola! mi nombre es Jenny. Me gusta dar carino, voy a hacerte mucha compañia, seguirte por toda la casa y por supuesto dormir con vos! Busco a mi dueño!",
                          
         },
     ]
