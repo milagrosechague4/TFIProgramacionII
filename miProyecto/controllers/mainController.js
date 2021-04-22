@@ -55,7 +55,19 @@ let controller = {
                 usuario = usuariosArray[i]
             } 
         }
-        return res.render('profile', {title: 'users'})
+        return res.render('profile', {usuario})
+    },
+
+    userEdit: (req, res)=> {
+        let id = req.params.id
+        let usuario ;
+
+        for(let i = 0; i < usuariosArray.length; i++){
+            if(usuariosArray[i].id == id){
+                usuario = usuariosArray[i]
+            } 
+        }
+        return res.render('profile-edit', usuario)
     }
 }
 

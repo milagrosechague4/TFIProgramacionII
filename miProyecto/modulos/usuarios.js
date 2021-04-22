@@ -5,6 +5,10 @@ let usuarios = {
                 nombre: "Maria Gutierrez",
                 añoDeNacimiento: 23/7/1987,
                 email: "mgutierrez@gmail.com",
+                img: 'default-image.png',
+                seguidores: 27,
+                comentarios: 66,
+                productos: 1
 
             },
             {
@@ -12,6 +16,10 @@ let usuarios = {
                 nombre: "Franco Beslavsky",
                 añoDeNacimiento: 1/9/1999,
                 email: "beslaf@fibertel.com.ar",
+                img: 'default-image.png',
+                seguidores: 27,
+                comentarios: 66,
+                productos: 1
 
             },
             {
@@ -19,6 +27,10 @@ let usuarios = {
                 nombre: "Santino Benitez",
                 añoDeNacimiento: 2/9/1993,
                 email: "santinob@gmail.com",
+                img: 'default-image.png',
+                seguidores: 27,
+                comentarios: 66,
+                productos: 1
 
              
             },
@@ -27,6 +39,10 @@ let usuarios = {
                 nombre: "Teresa Martinez",
                 añoDeNacimiento: 19/5/1989,
                 email: "teremartinez@gmail.com",
+                img: 'default-image.png',
+                seguidores: 27,
+                comentarios: 66,
+                productos: 1
 
                            
             },
@@ -35,18 +51,30 @@ let usuarios = {
                 nombre: "Lucas Fernandez",
                 añoDeNacimiento: 8/1/1999,
                 email: "luquitas8@gmail.com",
+                img: 'default-image.png',
+                seguidores: 27,
+                comentarios: 66,
+                productos: 1
             },
             {
                 id: 6,
                 nombre: "Marcos Aramburu",
                 añoDeNacimiento: 18/7/1987,
                 email: "marcosgolf1@gmail.com",
+                img: 'default-image.png',
+                seguidores: 27,
+                comentarios: 66,
+                productos: 1
             },
             {
                 id: 7,
                 nombre: "Ana Teresa",
                 añoDeNacimiento: 30/9/1993,
                 email: "anatere@gmail.com",
+                img: 'default-image.png',
+                seguidores: 27,
+                comentarios: 66,
+                productos: 1
             },],
 
         }
