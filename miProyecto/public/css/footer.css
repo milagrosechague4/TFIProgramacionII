@@ -1,3 +1,13 @@
 .img-footer {
     width: 100px;
+    border-radius: 50%;
+}
+.main-footer {
+    background-color: chocolate;
+    padding: 10px;
+}
+.footer-data h2{
+    color: black;
+}.footer-data p{
+    color: black;
 }
