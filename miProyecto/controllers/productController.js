@@ -13,11 +13,11 @@ module.exports = {
     show : (req, res)=> {
         let id = req.params.id;
         let rescatado;
-        let usuario;
+        //let usuario 
 
-        for(let i = 0; i < usuariosArray.length; i++){
-                usuario = usuariosArray[i]
-        }
+       // for(let i = 0; i < usuariosArray.length; i++){
+       //         usuario = usuariosArray[i]
+        //}
 
         
         for(let i = 0; i < animalesArray.length; i++){
@@ -26,9 +26,9 @@ module.exports = {
             } 
         }
        
-        return res.render('product', {rescatado, usuario});
+        return res.render('product', {rescatado, usuariosArray});
     },
-    
+
     add : (req,res)=> {
         return res.render('product-add', {title : 'add'})
     },
