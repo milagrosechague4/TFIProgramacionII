@@ -3,7 +3,7 @@ let usuarios = {
             {
                 id: 1,
                 nombre: "Maria Gutierrez",
-                añoDeNacimiento: 23/7/1987,
+                añoDeNacimiento: 1987-07-23,
                 email: "mgutierrez@gmail.com",
                 img: 'user.jpg',
                 seguidores: 27,
@@ -14,7 +14,7 @@ let usuarios = {
             {
                 id: 2,
                 nombre: "Franco Beslavsky",
-                añoDeNacimiento: 1/9/1999,
+                añoDeNacimiento: 1999-09-01,
                 email: "beslaf@fibertel.com.ar",
                 img: 'user.jpg',
                 seguidores: 27,
@@ -25,7 +25,7 @@ let usuarios = {
             {
                 id: 3,
                 nombre: "Santino Benitez",
-                añoDeNacimiento: 2/9/1993,
+                añoDeNacimiento: 1993-09-02,
                 email: "santinob@gmail.com",
                 img: 'user.jpg',
                 seguidores: 27,
@@ -37,7 +37,7 @@ let usuarios = {
             {
                 id: 4,
                 nombre: "Teresa Martinez",
-                añoDeNacimiento: 19/5/1989,
+                añoDeNacimiento: 1989-05-19,
                 email: "teremartinez@gmail.com",
                 img: 'user.jpg',
                 seguidores: 27,
@@ -49,7 +49,7 @@ let usuarios = {
             {
                 id: 5,
                 nombre: "Lucas Fernandez",
-                añoDeNacimiento: 8/1/1999,
+                añoDeNacimiento: 1999-01-08,
                 email: "luquitas8@gmail.com",
                 img: 'user.jpg',
                 seguidores: 27,
@@ -59,7 +59,7 @@ let usuarios = {
             {
                 id: 6,
                 nombre: "Marcos Aramburu",
-                añoDeNacimiento: 18/7/1987,
+                añoDeNacimiento: 1987-07-18,
                 email: "marcosgolf1@gmail.com",
                 img: 'user.jpg',
                 seguidores: 27,
@@ -69,7 +69,7 @@ let usuarios = {
             {
                 id: 7,
                 nombre: "Ana Teresa",
-                añoDeNacimiento: 30/9/1993,
+                añoDeNacimiento: 1993-01-30,
                 email: "anatere@gmail.com",
                 img: 'user.jpg',
                 seguidores: 27,
