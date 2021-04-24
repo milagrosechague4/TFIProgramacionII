@@ -1,4 +1,9 @@
 .main-header{
     background-color: chocolate;
-
+}
+.container a{
+    color: white;
+}
+.header-data p{
+    color: white;
 }

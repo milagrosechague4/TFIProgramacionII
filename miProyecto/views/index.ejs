@@ -8,67 +8,67 @@
 	<!-- ponerlo en tdoos menos en el header logeado, borrando el header--> 
 	<%- include('./partials/header')%>
 	<!-- /Header -->
-	
-	<!-- Banner -->
-	<div class="banner">
-		<img class="w-100"src="images/img-home-banner1.jpg" alt="Banner de ofertas">
+	<div>
+		<!-- Banner -->
+		<div class="banner">
+			<img class="w-100"src="images/img-home-banner1.jpg" alt="Banner de ofertas">
+		</div>
+		<!-- /Banner -->
+	<div class="container">
+		<!-- Novedades -->
+		<div class="gatos"></div>
+			<div class="container products-wrapper">
+				<div class="row">
+					<div class="col-12">
+						<h2 class="products-title">Nuestros gatitos</h2>
+					</div>
+					<!-- Show the "ultimos" products -->
+					<%  for(let i=0; i<perroArray.length; i++){  let perros = perroArray[i] %>
+					<div class="col-12 col-sm-6 col-lg-3">
+						<section class="product-box">
+							<a href="/product/<%= perros.id %>">
+								<figure class="product-box_image">
+									<img src="/images/products/<%= perros.img %>" alt="cafetera moulinex">
+								</figure>
+								<article class="product-box_data">
+									<h2> <%=perros.nombre%> </h2>
+									<p> <%=perros.descripcion%> </p>
+									<p> <%=perros.años%> </p>
+								</article>
+							</a>
+						</section>
+					</div>
+					<% } %>
+					
+			<!-- /Novedades -->
+		<!-- Más comentados -->
+		<div class="perros">
+			<div class="container products-wrapper">
+				<div class="row">
+					<div class="col-12">
+						<h2 class="products-title">Nuestros cachorros</h2>
+					</div>
+					<!-- Show the "ultimos" products -->
+					<%  for(let i=0; i<gatoArray.length; i++){  let gatos = gatoArray[i] %>
+					<div class="col-12 col-sm-6 col-lg-3">
+						<section class="product-box">
+							<a href="/product/<%= gatos.id %>">
+								<figure class="product-box_image">
+									<img class= "w-100" src="/images/products/<%= gatos.img %>" alt="cafetera moulinex">
+								</figure>
+								<article class="product-box_data">
+									<h2><%= gatos.nombre %></h2>
+									<p><%= gatos.descripcion %> </p>
+									<p><%= gatos.años %></p>
+								</article>
+							</a>
+						</section>
+					</div>
+					<% } %>
+		</div>		
+		<!-- /Más comentados -->
+
 	</div>
-	<!-- /Banner -->
-
-	<!-- Novedades -->
-	<div class="gatos"></div>
-		<div class="container products-wrapper">
-			<div class="row">
-				<div class="col-12">
-					<h2 class="products-title">Nuestros gatitos</h2>
-				</div>
-				<!-- Show the "ultimos" products -->
-				<%  for(let i=0; i<perroArray.length; i++){  let perros = perroArray[i] %>
-				<div class="col-12 col-sm-6 col-lg-3">
-					<section class="product-box">
-						<a href="/product/<%= perros.id %>">
-							<figure class="product-box_image">
-								<img src="/images/products/<%= perros.img %>" alt="cafetera moulinex">
-							</figure>
-							<article class="product-box_data">
-								<h2> <%=perros.nombre%> </h2>
-								<p> <%=perros.descripcion%> </p>
-								<p> <%=perros.años%> </p>
-							</article>
-						</a>
-					</section>
-				</div>
-				<% } %>
-				
-		<!-- /Novedades -->
-	<!-- Más comentados -->
-	<div class="perros">
-		<div class="container products-wrapper">
-			<div class="row">
-				<div class="col-12">
-					<h2 class="products-title">Nuestros cachorros</h2>
-				</div>
-				<!-- Show the "ultimos" products -->
-				<%  for(let i=0; i<gatoArray.length; i++){  let gatos = gatoArray[i] %>
-				<div class="col-12 col-sm-6 col-lg-3">
-					<section class="product-box">
-						<a href="/product/<%= gatos.id %>">
-							<figure class="product-box_image">
-								<img class= "w-100" src="/images/products/<%= gatos.img %>" alt="cafetera moulinex">
-							</figure>
-							<article class="product-box_data">
-								<h2><%= gatos.nombre %></h2>
-								<p><%= gatos.descripcion %> </p>
-								<p><%= gatos.años %></p>
-							</article>
-						</a>
-					</section>
-				</div>
-				<% } %>
-	</div>		
-	<!-- /Más comentados -->
-
-
 	<!-- footer -->
 	<%- include('./partials/footer')%>
 	<!-- /footer -->
