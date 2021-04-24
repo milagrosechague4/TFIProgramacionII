@@ -32,7 +32,6 @@ let controller = {
     
     search: function(req, res) {
        
-
         let perroArray = [];
         let gatoArray = [];
 
@@ -46,6 +45,11 @@ let controller = {
 
         return res.render('search-results', { perroArray });
     },
+
+    perfil: (req, res)=>{
+        let usuario = usuariosArray
+        return res.render('profile', {usuario, animalesArray})
+    },
     users: function(req, res){
         let id = req.params.id
         let usuario ;
@@ -55,7 +59,8 @@ let controller = {
                 usuario = usuariosArray[i]
             } 
         }
-        return res.render('profile', {usuario})
+
+        return res.render('profile', {usuario, animalesArray})
     },
 
     userEdit: (req, res)=> {
@@ -67,6 +72,8 @@ let controller = {
                 usuario = usuariosArray[i]
             } 
         }
+
+
         return res.render('profile-edit', usuario)
     }
 }
