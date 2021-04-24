@@ -45,6 +45,11 @@ let controller = {
 
         return res.render('search-results', { perroArray });
     },
+
+    perfil: (req, res)=>{
+        let usuario = usuariosArray
+        return res.render('profile', {usuario, animalesArray})
+    },
     users: function(req, res){
         let id = req.params.id
         let usuario ;
