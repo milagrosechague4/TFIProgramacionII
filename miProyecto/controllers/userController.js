@@ -5,7 +5,7 @@ const usuarios = require('../modulos/usuarios')
 const usuariosArray = usuarios.index
 
 module.exports = {
-    perfil: (req, res)=>{
+perfil: (req, res)=>{
     let usuario = usuariosArray
     return res.render('profile', {usuario, animalesArray})
 },
