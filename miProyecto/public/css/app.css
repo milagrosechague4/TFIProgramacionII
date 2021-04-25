@@ -1,6 +1,3 @@
-/*====== Fonts ======*/
-@import url('<link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300&display=swap" rel="stylesheet">');
-
 
 /*====== Variables ======*/
 :root {
@@ -43,6 +40,7 @@ a {
   display: inline-block;
   text-decoration: none;
   color: inherit;
+ 
 }
 
 figure {
@@ -56,7 +54,7 @@ img {
 
 input,
 textarea {
-  font-family: inherit;
+  font-family: 'Questrial', sans-serif;
 }
 
 hr {
@@ -68,16 +66,18 @@ hr {
 /*====== Main Header ======*/
 .main-header {
   padding: 15px 0;
-  background-color: var(--yellow);
+  background-color: chocolate;
 }
 
 .main-header_home-link,
 .main-header_credit-link {
   display: block;
+  font-family: 'Bebas Neue', cursive;
+  color: white;
 }
 
 .main-header_credit-link {
-  font-size: 1.5em;
+  font-size: 2.0em;
   margin-top: 20px;
   text-align: center;
 }
@@ -110,6 +110,8 @@ hr {
 }
 
 
+
+
 /*====== Main Navbar ======*/
 .btn-toggle-navbar {
   background-color: var(--dark-blue);
@@ -129,7 +131,9 @@ hr {
 
 .left-navbar,
 .right-navbar {
-  font-size: 1.5em;
+  font-family: 'Bebas Neue', cursive;
+  color: white;
+  font-size: 2.5em;
 }
 
 .logout{
@@ -137,6 +141,8 @@ hr {
   border: 0px;
   cursor: pointer;
   font-size: 1em;
+  font-family: 'Bebas Neue', cursive;
+  color: white;
 }
 
 .logout:hover{
@@ -161,6 +167,17 @@ hr {
   
 }
 
+.banner img {
+  display: block;
+  margin-bottom: 1px;
+}
+
+
+.gatos{
+  padding-top: 100px;
+}
+
+
 
 /*====== Products ======*/
 .products-wrapper {
@@ -169,9 +186,10 @@ hr {
 }
 
 .products-title {
-  font-size: 2.4em;
+  font-size: 3.4em;
   font-weight: 400;
-  color: var(--gray);
+  font-family: 'Bebas Neue', cursive;
+  color: black;
 }
 
 .product-box {
@@ -200,9 +218,11 @@ hr {
 }
 
 .product-box_data h2 {
+  font-family: 'Roboto', sans-serif;
   font-size: 2.4em;
   font-weight: 300;
   margin: 0;
+  color: black
 }
 
 .product-box_data span {
@@ -213,6 +233,8 @@ hr {
 }
 
 .product-box_data p {
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
   font-size: 1.5em;
   width: 100%;
   color: var(--gray);
@@ -260,11 +282,14 @@ hr {
 
 /*====== Footer ======*/
 .main-footer {
-  background-color: #ffffff;
-  padding: 20px 0;
+  background-color: chocolate;
+  padding: 7px;
   margin-top: 80px;
 }
-
+.img-footer {
+  width: 100px;
+  border-radius: 50%;
+}
 .footer-data {
   text-align: center;
 }
@@ -275,13 +300,15 @@ hr {
 }
 
 .footer-data h2 {
-  color: var(--gray);
+  color: white;
   font-size: 2.4em;
+  font-family: 'Bebas Neue', cursive;
   font-weight: 400;
 }
 
 .footer-data p {
-  color: var(--gray);
+  font-family: 'Roboto', sans-serif;
+  color:white;
   font-size: 1.5em;
   font-weight: 300;
 }
@@ -324,9 +351,13 @@ hr {
 
 .product-detail-description {
   padding: 15px 15px 15px 40px;
+  color: black;
   font-size: 1.8em;
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
   line-height: 1.5;
 }
+
 
 .product-detail-price {
   font-size: 5.5em;
@@ -417,16 +448,19 @@ hr {
   
 }
 .comments p{
+  font-family: 'Roboto', sans-serif;
   font-size: 1.5em;
   margin-top: 0;
 }
 .comments .user{
+  font-family: 'Roboto', sans-serif;;
   font-size: 1.7em;
 }
 
 /*====== Formularios ======*/
 .form-label {
   display: inline-block;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.6em;
   margin: 10px 0;
 }
@@ -466,7 +500,8 @@ textarea.form-input {
 }
 
 .main-title{
-  font-size: 25px;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 30px;
   margin-bottom: 10px;
 }
 
@@ -475,6 +510,10 @@ textarea.form-input {
   padding: 10px 20px;
   border-radius: 4px;
   color: #fff;
+}
+
+.info-usuario li{
+  font-family: 'Roboto', sans-serif;
 }
 
 
