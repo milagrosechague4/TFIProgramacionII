@@ -46,36 +46,7 @@ let controller = {
         return res.render('search-results', { perroArray });
     },
 
-    perfil: (req, res)=>{
-        let usuario = usuariosArray
-        return res.render('profile', {usuario, animalesArray})
-    },
-    users: function(req, res){
-        let id = req.params.id
-        let usuario ;
-
-        for(let i = 0; i < usuariosArray.length; i++){
-            if(usuariosArray[i].id == id){
-                usuario = usuariosArray[i]
-            } 
-        }
-
-        return res.render('profile', {usuario, animalesArray})
-    },
-
-    userEdit: (req, res)=> {
-        let id = req.params.id
-        let usuario ;
-
-        for(let i = 0; i < usuariosArray.length; i++){
-            if(usuariosArray[i].id == id){
-                usuario = usuariosArray[i]
-            } 
-        }
-
-
-        return res.render('profile-edit', usuario)
-    }
+    
 }
 
 module.exports = controller;

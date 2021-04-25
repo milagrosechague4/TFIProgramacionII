@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var mainController = require('../controllers/mainController');
+var mainController = require('../controllers/userController');
 
 /* GET users listing. */
 router.get('/', mainController.perfil)
