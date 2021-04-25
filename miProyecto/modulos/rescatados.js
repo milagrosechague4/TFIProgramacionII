@@ -49,7 +49,7 @@ let rescatados = {
                 id: 6,
                 class: 0,
                 img: 'kitten_1.JPG',
-                nombre: "Jack y Joe ",
+                nombre: "Jack",
                 fechaDeNacimiento: 2019/01/23,
                 descripcion: "Hola! mi nombre es Jack y mi hermano se llama Joe. Buscamos un mismo hogar para no separarnos. Somos curiosos, chrlatanes y necesitamos muchos mimos!",
                         
@@ -58,7 +58,7 @@ let rescatados = {
                 id: 7,
                 class: 0,
                 img: 'kitten_1.JPG',
-                nombre: "Palta y Rita",
+                nombre: "Palta",
                 fechaDeNacimiento: 2019/01/23,
                 descripcion: "Hola! mi nombre es Palta y mi hermana se llama Rita! Nos gusta jugar, dormir mucho y somos muy comunicativas. Queremos tener a un mismo dueno!",
                     
