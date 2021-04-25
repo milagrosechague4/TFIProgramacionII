@@ -40,9 +40,9 @@ let rescatados = {
                 id: 5,
                 class: 0,
                 img: 'kitten_1.JPG',
-                nombre: "Titan",
+                nombre: "Bigotes",
                 fechaDeNacimiento: 2019/01/23,
-                descripcion: "Hola! mi nombre es Titan, soy amistoso y muy carinoso. Siempre estoy en paz. Me encanta jugar con hilitos y tapitas! Busco un hogar!",
+                descripcion: "Hola! mi nombre es Bigotes, soy amistoso y muy carinoso. Siempre estoy en paz. Me encanta jugar con hilitos y tapitas! Busco un hogar!",
                         
             },
             {
@@ -51,7 +51,7 @@ let rescatados = {
                 img: 'kitten_1.JPG',
                 nombre: "Jack",
                 fechaDeNacimiento: 2019/01/23,
-                descripcion: "Hola! mi nombre es Jack y mi hermano se llama Joe. Buscamos un mismo hogar para no separarnos. Somos curiosos, chrlatanes y necesitamos muchos mimos!",
+                descripcion: "Hola! mi nombre es Jack. Buscamos un mismo hogar para no separarnos. Somos curiosos, chrlatanes y necesitamos muchos mimos!",
                         
             },
             {
@@ -60,7 +60,7 @@ let rescatados = {
                 img: 'kitten_1.JPG',
                 nombre: "Palta",
                 fechaDeNacimiento: 2019/01/23,
-                descripcion: "Hola! mi nombre es Palta y mi hermana se llama Rita! Nos gusta jugar, dormir mucho y somos muy comunicativas. Queremos tener a un mismo dueno!",
+                descripcion: "Hola! mi nombre es Palta! Me gusta jugar, dormir mucho y soy muy comunicativa. Quiero tener un dueno!",
                     
              },
             {
