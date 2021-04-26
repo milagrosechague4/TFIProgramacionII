@@ -29,8 +29,8 @@ CREATE TABLE `usuarios` (
   `nombre` varchar(50) NOT NULL,
   `apellido` varchar(50) NOT NULL,
   `fechaNacimiento` date NOT NULL,
-  `comentarios` tinyint(4) DEFAULT NULL,
-  `seguidores` smallint(6) DEFAULT NULL,
+  `email` varchar(100) NOT NULL,
+  `contraseña` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -41,7 +41,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Maria','Gutierrez','1978-07-03',66,27),(2,'Franco','Beslavsky','1999-09-01',66,27),(3,'Maria','Gutierrez','1978-07-03',26,17),(4,'Santiago','Benitez','1993-09-02',33,5),(5,'Teresa','Martinez','1989-05-19',6,7);
+INSERT INTO `usuarios` VALUES (1,'Maria','Gutierrez','1978-07-03','mgutierrez@gmail.com','hola123'),(2,'Franco','Beslavsky','1999-09-01','beslaf@fibertel.com.ar','quetal321'),(3,'Lucas','Fernandez','1978-07-03','lfernandez@gmail.com','contraseña'),(4,'Santiago','Benitez','1993-09-02','santinob@gmail.com','43031278'),(5,'Teresa','Martinez','1989-05-19','teremartinez@gmail.com','47070229');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-04-25 20:02:00
+-- Dump completed on 2021-04-25 21:27:39
