@@ -3,8 +3,8 @@ var router = express.Router();
 var userController = require('../controllers/userController');
 
 /* GET users listing. */
-router.get('/', userController.perfil)
-router.get('/:id', userController.users);
-router.get('/profile-edit/:id', userController.userEdit)
+router.get('/', userController.index)
+router.get('/:id', userController.show);
+router.get('/profile-edit/:id', userController.update)
 
 module.exports = router;

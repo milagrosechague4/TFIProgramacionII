@@ -6,12 +6,12 @@ const usuariosArray = usuarios.index
 
 module.exports = {
 
-perfil: (req, res)=>{
+index: (req, res)=>{
     let usuario = usuariosArray[0]
    return res.render('profile', {usuario, animalesArray})
 },
 
-users: function(req, res){
+show: function(req, res){
     let id = req.params.id
     let usuario ;
 
@@ -24,7 +24,7 @@ users: function(req, res){
     return res.render('profile', {usuario, animalesArray})
 },
 
-userEdit: function(req, res) {
+update: function(req, res) {
 
     let id = req.params.id
     let usuario ;

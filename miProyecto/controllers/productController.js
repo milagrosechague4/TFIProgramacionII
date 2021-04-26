@@ -29,7 +29,7 @@ module.exports = {
         return res.render('product', {rescatado, usuariosArray});
     },
 
-    add : (req,res)=> {
+    store : (req,res)=> {
         return res.render('product-add', {title : 'add'})
     },
 

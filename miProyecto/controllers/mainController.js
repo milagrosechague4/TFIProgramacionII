@@ -22,11 +22,11 @@ let controller = {
         return res.render('index', {perroArray, gatoArray});
     },
 
-    register: function(req, res){
+    create: function(req, res){
         return res.render('register', {title: 'Registrarse'})
     },
 
-    login: function(req, res) {
+    show: function(req, res) {
         return res.render('login', { title: 'Iniciar Secion' });
     },
     
