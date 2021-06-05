@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'comentarios';
+    let alias = 'Comentario';
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -13,7 +13,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         fechaCreacion: {
             type: dataTypes.DATE
-        }
+        },
         productId: {
             type: dataTypes.INTEGER
         }
@@ -23,12 +23,13 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false,
         underscored: true 
     }
-    const comentario = sequelize.define(alias, cols, config);
-    comentario.associate = function(models){
-        comentario.hasMany(models.usuarios,{
+    const Comentario = sequelize.define(alias, cols, config);
+    
+    Comentario.associate = function(models){
+        Comentario.hasMany(models.usuarios,{
             as: 'usuarios',
             foreignKey: 'usuarioId'
         })
     }
-    return comentarios;
+    return Comentario;
 }

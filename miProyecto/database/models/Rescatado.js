@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'rescatados';
+    let alias = 'Rescatado';
     let cols = {
         id : {
             type: dataTypes.INTEGER,
@@ -30,13 +30,14 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false,
         onderscore: true
     }
-    const rescatados = sequelize.define(alias, cols, config);
-    rescatados.associate = function(models){
-        rescatados.belongsTo(models.Genre, {
-            as : 'usuarios',
-            foreignKey: 'Idusuario' 
-        })
-    }
+    const Rescatado = sequelize.define(alias, cols, config);
+   
+    //Rescatado.associate = function(models){
+    //    Rescatado.belongsTo(models.Genre, {
+    //        as : 'usuarios',
+    //        foreignKey: 'Idusuario' 
+    //    })
+    //}
 
-    return rescatados;
+    return Rescatado;
 }
