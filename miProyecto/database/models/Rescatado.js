@@ -15,7 +15,7 @@ module.exports = (sequelize, dataTypes) => {
         nombre: {
             type: dataTypes.STRING
         },
-        fechRescate : {
+        fechaRescate : {
             type: dataTypes.DATE
         },
         clase: {
