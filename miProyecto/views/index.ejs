@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
-<!-- Include Head -->
+<!-- Include Head --> 
 <%- include('./partials/head')%>
-
-<body>
+	<body>
 	<!-- Header --> 
 	<!-- ponerlo en tdoos menos en el header logeado, borrando el header--> 
-	<%- include('./partials/header')%>
+	<% if(locals.usuario) { %> 
+		<%- include('./partials/header')%>
+		
+		<% } else { %> 
+			<%- include('./partials/headerLogueado') %> 
+		<% } %> 
 	<!-- /Header -->
 	<div>
 		<!-- Banner -->
