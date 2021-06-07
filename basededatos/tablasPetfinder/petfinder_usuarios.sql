@@ -1,5 +1,5 @@
-CREATE DATABASE  IF NOT EXISTS `petfinder` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
-USE `petfinder`;
+/*--CREATE DATABASE  IF NOT EXISTS `petfinder` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+--USE `petfinder`; 
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: petfinder
