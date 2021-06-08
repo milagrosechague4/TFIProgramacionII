@@ -47,7 +47,7 @@ module.exports = {
            fechaRescate: req.body.rescate,
            clase: 1,
            descripcion: req.body.descripcion,
-           imagen: req.body.imagen,
+           imagen: req.file.filename,
        })
        .then(resultados=>{
         res.redirect ('/')

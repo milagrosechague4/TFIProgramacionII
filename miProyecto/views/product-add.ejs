@@ -16,7 +16,7 @@
 				<h2 class="products-title">Cargar Rescatado</h2>
 			</div>
 			<div>
-				<form action="/product/add" method="POST" class="col-6">
+				<form action="/product/add" method="POST" class="col-6" enctype="multipart/form-data">
 						
 					<div class="filas">
 						<div class="fila2">
@@ -35,7 +35,7 @@
 							<label>
 								Imagen <span class="req">*</span>
 							</label>
-							<input type="file" name="imagen" />
+							<input type="file" name="imagen" accept="image/png, image/jpeg" />
 						</div>
 						<div class="fila3">
 							<label>
