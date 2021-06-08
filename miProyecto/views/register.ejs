@@ -14,32 +14,32 @@
 				<h2 class="products-title">Registrate</h2>
 			</div>
 			<div> 		
-				<form action="/" method="GET" class="col-6">
+				<form action="/users/register" method="POST" class="col-6">
 
 					<div class="filas">
 						<div class="fila">
-							<label>
+							<label for="nombre">
 								Nombre Completo<span class="req">*</span>
 							</label>
-							<input type="text"  />
+							<input type="text" id="nombre" name="nombre" required>
 						</div>	
 						<div class="fila">
-							<label>
+							<label for="adn">
 									Año de nacimiento <span class="req">*</span>
 							</label>
-							<input type="number"  />
+							<input type="number" id="adn" name="adn"  required>
 						</div>
 						<div class="fila">
-							<label>
+							<label for="email">
 								Email Address<span class="req">*</span>
 							</label>
-							<input type="email"/>
+							<input type="email" id="email" name="email"required>
 						</div>
 						<div class="fila">
-							<label>
+							<label for="password">
 								Crea tu contraseña<span class="req">*</span>
 							</label>
-							<input type="password"/>
+							<input type="password" id="password" name="password" required>
 						</div>
 					</div>
 					<p class="boton">			

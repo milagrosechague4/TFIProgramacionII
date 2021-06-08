@@ -28,7 +28,6 @@ module.exports = (sequelize, dataTypes) => {
     let config = {
         tableName : 'rescatados',
         timestamps: false,
-        onderscore: true
     }
     const Rescatado = sequelize.define(alias, cols, config);
    

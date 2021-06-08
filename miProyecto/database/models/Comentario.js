@@ -21,12 +21,11 @@ module.exports = (sequelize, dataTypes) => {
     let config = {
         tableName: 'comentarios',
         timestamps: false,
-        underscored: true 
     }
     const Comentario = sequelize.define(alias, cols, config);
     
     Comentario.associate = function(models){
-        Comentario.hasMany(models.usuarios,{
+        Comentario.hasMany(models.Usuario,{
             as: 'usuarios',
             foreignKey: 'usuarioId'
         })

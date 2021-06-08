@@ -3,8 +3,9 @@ var router = express.Router();
 var userController = require('../controllers/userController');
 
 /* GET users listing. */
-router.get('/', userController.index)
+router.get('/', userController.index);
 router.get('/:id', userController.show);
-router.get('/profile-edit/:id', userController.update)
+router.get('/profile-edit/:id', userController.update);
+router.post('/register',userController.register);
 
 module.exports = router;
