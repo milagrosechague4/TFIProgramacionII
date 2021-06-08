@@ -35,13 +35,29 @@ module.exports = {
        
     },
 
-    store : (req,res)=> {
+    productAdd : (req,res)=> {
         return res.render('product-add', {title : 'add'})
+    },
+
+    store : (req,res)=> {
+       db.Rescatado.create({
+           //id default si no se completa
+           idUsuario: 1,
+           nombre: req.body.nombre, 
+           fechaRescate: req.body.rescate,
+           clase: 1,
+           descripcion: req.body.descripcion,
+           imagen: req.body.imagen,
+       })
+       .then(resultados=>{
+        res.redirect ('/')
+       })
     },
 
     edit : (req,res)=> {
         return res.render('product-edit', {title : 'edit'})
-    }
+    },
+    
     
     
 }
