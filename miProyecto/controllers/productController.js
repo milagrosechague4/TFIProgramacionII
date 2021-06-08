@@ -1,9 +1,10 @@
 const db = require('../database/models');
+const op = db.sequelize.Op
 //const rescatados = require('../modulos/rescatados');
 //const animalesArray = rescatados.animales;
 
-const usuarios = require('../modulos/usuarios')
-const usuariosArray = usuarios.index
+//const usuarios = require('../modulos/usuarios')
+//const usuariosArray = usuarios.index
 
 
 module.exports = { 
@@ -17,13 +18,25 @@ module.exports = {
         db.Rescatado.findByPk(id)
         .then(rescatado=> {
 
-            let usuario 
+            db.Comentario.findAll({
+                where: [
+                    {
+                        productId : id
+                    }
+                ]})
+            .then(comentario =>{
 
-            for(let i = 0; i < usuariosArray.length; i++){
-                usuario = usuariosArray[i]
-            }
-            return res.render('product', {rescatado, usuariosArray});
+                let comentarios = []
+
+                comentario.forEach(element => {
+                    comentarios.push(element)
+                });
+            })
+            .catch(error => console.log(error))
+            
+            return res.render('product', {rescatado, comentarios});
         })
+        .catch(error => console.log(error))
        
         //let rescatado;
         

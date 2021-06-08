@@ -31,12 +31,12 @@ module.exports = (sequelize, dataTypes) => {
     }
     const Rescatado = sequelize.define(alias, cols, config);
    
-    //Rescatado.associate = function(models){
-    //    Rescatado.belongsTo(models.Genre, {
-    //        as : 'usuarios',
-    //        foreignKey: 'Idusuario' 
-    //    })
-    //}
+    Rescatado.associate = function(models){
+        Rescatado.belongsTo(models.Usuario, {
+            as : 'usuarios',
+            foreignKey: 'Idusuario' 
+        })
+    }
 
     return Rescatado;
 }

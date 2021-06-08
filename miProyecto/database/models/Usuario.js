@@ -20,12 +20,14 @@ module.exports = (sequelize, dataTypes) => {
         },
         password: {
             type: dataTypes.STRING
-        }
+        },
+        
     }
     let config = {
         tableName: 'usuarios',
         timestamps: false 
     }
     const Usuario = sequelize.define(alias, cols, config);
+
     return Usuario;
 }

@@ -2,9 +2,9 @@
 //const animalesArray = rescatados.animales;
 
 const db = require('../database/models')
-
-const usuarios = require('../modulos/usuarios')
-const usuariosArray = usuarios.index
+const op = db.sequelize.Op
+//const usuarios = require('../modulos/usuarios')
+//const usuariosArray = usuarios.index
 
 
 let controller = {
@@ -17,7 +17,7 @@ let controller = {
             let gatoArray = [];
 
             respuesta.forEach(element =>{
-                if (element.class == 0){
+                if (element.clase == 0){
                     perroArray.push(element)
                 } else {
                     gatoArray.push(element)
@@ -39,34 +39,45 @@ let controller = {
     
     search: function(req, res) {
 
-            let buscar = req.query.buscar;
+            let buscar = req.query.search;
             //return res.send(req.query.buscar);
             //Aquí me dispongo a realizar mi tarea
             if(buscar === ''){
-                db.Movie.findAll()
-                .then(respuesta =>{
-                    return res.render('movies', {respuesta})
-                })
-                .catch(error => console.log(error))
-            }else{
-                db.Movie.findAll({
-                    where: [
-                        {
-                            title : {[op.like]: '%'+ buscar+'%'}
-                        }
-                    ]})
+                db.Rescatado.findAll()
                 .then(respuesta =>{
                     let perroArray = [];
                     let gatoArray = [];
 
                     respuesta.forEach(element =>{
-                        if (element.class == 0){
+                        if (element.clase == 0){
                              perroArray.push(element)
                     } else {
                         gatoArray.push(element)
                     }
                     })
-                    return res.render('search-results', {respuesta})
+                    return res.render('index', {perroArray, gatoArray})
+                })
+                .catch(error => console.log(error))
+            }else{
+                db.Rescatado.findAll({
+                    where: [
+                        {
+                            nombre : {[op.like]: '%'+ buscar +'%'}
+                        }
+                    ]})
+                .then(respuesta =>{
+                   
+                    let perroArray = [];
+                    let gatoArray = [];
+
+                    respuesta.forEach(element =>{
+                        if (element.clase == 0){
+                            perroArray.push(element)
+                    } else {
+                        gatoArray.push(element)
+                    }
+                    })
+                    return res.render('search-results', {perroArray, gatoArray})
                 })
                 .catch(error => console.log(error))
             }
