@@ -28,6 +28,18 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false 
     }
     const Usuario = sequelize.define(alias, cols, config);
+    Usuario.associate = function(models){
+        Usuario.belongsTo(models.Rescatado, {
+            as : 'rescatados',
+            foreignKey: 'Idusuario' 
+        })
+    }
+    Usuario.associate = function(models){
+        Usuario.hasMany(models.Comentario,{
+            as: 'comentarios',
+            foreignKey: 'UsuarioId'
+        })
+    }
 
     return Usuario;
 }

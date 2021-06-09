@@ -37,6 +37,12 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: 'Idusuario' 
         })
     }
+    Rescatado.associate = function(models){
+        Rescatado.hasMany(models.Comentario,{
+            as: 'comentarios',
+            foreignKey: 'productId'
+        })
+    }
 
     return Rescatado;
 }

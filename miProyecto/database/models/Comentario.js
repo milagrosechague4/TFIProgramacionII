@@ -27,13 +27,13 @@ module.exports = (sequelize, dataTypes) => {
     Comentario.associate = function(models){
         Comentario.belongsTo(models.Usuario,{
             as: 'usuarios',
-            foreignKey: 'id'
+            foreignKey: 'usuarioId'
         })
     }
     Comentario.associate = function(models){
-        Comentario.hasMany(models.Rescatado,{
+        Comentario.belongsTo(models.Rescatado,{
             as: 'rescatados',
-            foreignKey: 'id'
+            foreignKey: 'productId'
         })
     }
     return Comentario;

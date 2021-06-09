@@ -24,17 +24,19 @@ module.exports = {
                         productId : id
                     }
                 ]})
-            .then(comentario =>{
+            .then(respuesta =>{
 
                 let comentarios = []
 
-                comentario.forEach(element => {
+                respuesta.forEach(element => {
                     comentarios.push(element)
                 });
+
+                return res.render('product', {rescatado, comentarios});
             })
             .catch(error => console.log(error))
             
-            return res.render('product', {rescatado, comentarios});
+            //return res.render('product', {rescatado, comentarios});
         })
         .catch(error => console.log(error))
        
