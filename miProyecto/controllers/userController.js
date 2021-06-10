@@ -4,6 +4,9 @@ const animalesArray = rescatados.animales;
 const usuarios = require('../modulos/usuarios')
 const usuariosArray = usuarios.index
 
+const db = require('../database/models');
+const bcrypjs = require('bcryptjs');
+const op = db.Sequelize.Op;
 module.exports = {
 
 index: (req, res)=>{
@@ -37,5 +40,21 @@ update: function(req, res) {
 
     return res.render('profile-edit', {usuario});
 }, 
-
+create: (req,res) =>{
+    //return res.send('Estoy el registro de usuarios');
+    return res.render('register');
+},
+register: function(req, res) {
+        db.Usuario.create({
+            name : req.body.nombre,
+            fechaNacimiento : req.body.adn,
+            email : req.body.email,
+            password : bcrypjs.hashSync(req.body.password, 10)
+        })
+        .then(()=>{
+            
+            return res.redirect('/');
+        })     
+        .catch(error => console.log(error));
+    },
 }

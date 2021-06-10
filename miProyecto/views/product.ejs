@@ -24,14 +24,14 @@
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
-						<%  for(let i=0; i<5; i++){ let usuario = usuariosArray[i]%> 
+						<%  for(let i=0; i<5; i++){ let usuario = comentarios[i] %> 
 						<article>
-							<img src="/images/users/<%= usuario.img %>" alt="">
+							<img src="/images/users/user.jpg" alt="">
 							<div class="data">
 								<p class="user">
-								<strong> <a href="/users/<%= usuario.id %>"> <%= usuario.nombre %> </a> </strong>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-								Tempora doloribus enim aspernatur fugit corrupti suscipit sit dolore</p>
+								<strong> <a href="/users"> Hola </a> </strong>
+								<%= usuario.texto %>
+								</p>
 							</div>
 						</article>
 						<% } %>
