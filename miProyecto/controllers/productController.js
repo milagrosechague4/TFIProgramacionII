@@ -15,39 +15,16 @@ module.exports = {
     show : (req, res)=> {
         let id = req.params.id;
        
-        db.Rescatado.findByPk(id)
-        .then(rescatado=> {
-
-            db.Comentario.findAll({
-                where: [
-                    {
-                        productId : id
-                    }
-                ]})
-            .then(respuesta =>{
-
-                let comentarios = []
-
-                respuesta.forEach(element => {
-                    comentarios.push(element)
-                });
-
-                return res.render('product', {rescatado, comentarios});
+        db.Rescatado.findByPk(id, {
+             include:[
+                 {all: true, nested: true}
+                ]
             })
-            .catch(error => console.log(error))
-            
-            //return res.render('product', {rescatado, comentarios});
+        .then(rescatado=> {
+                return res.send (rescatado)
+           
         })
         .catch(error => console.log(error))
-       
-        //let rescatado;
-        
-        //for(let i = 0; i < animalesArray.length; i++){
-        //    if(animalesArray[i].id == id){
-        //        rescatado = animalesArray[i]
-        //    } 
-        //}
-       
     },
 
     productAdd : (req,res)=> {
