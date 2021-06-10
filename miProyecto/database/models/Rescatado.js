@@ -6,7 +6,7 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true 
         },
-        idUsuario: {
+        usuarioId: {
             type : dataTypes.INTEGER
         },
         imagen: {
@@ -34,15 +34,14 @@ module.exports = (sequelize, dataTypes) => {
     Rescatado.associate = function(models){
         Rescatado.belongsTo(models.Usuario, {
             as : 'usuarios',
-            foreignKey: 'Idusuario' 
-        })
-    }
-    Rescatado.associate = function(models){
+            foreignKey: 'usuarioId' 
+        }),
         Rescatado.hasMany(models.Comentario,{
             as: 'comentarios',
             foreignKey: 'productId'
         })
     }
+
 
     return Rescatado;
 }

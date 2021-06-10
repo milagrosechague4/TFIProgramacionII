@@ -18,7 +18,7 @@ module.exports = (sequelize, dataTypes) => {
         email: {
             type: dataTypes.STRING
         },
-        password: {
+        contraseña: {
             type: dataTypes.STRING
         },
         
@@ -31,13 +31,11 @@ module.exports = (sequelize, dataTypes) => {
     Usuario.associate = function(models){
         Usuario.belongsTo(models.Rescatado, {
             as : 'rescatados',
-            foreignKey: 'Idusuario' 
-        })
-    }
-    Usuario.associate = function(models){
+            foreignKey: 'usuarioId' 
+        }),
         Usuario.hasMany(models.Comentario,{
             as: 'comentarios',
-            foreignKey: 'UsuarioId'
+            foreignKey: 'usuarioId'
         })
     }
 
