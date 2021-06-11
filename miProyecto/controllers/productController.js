@@ -17,12 +17,14 @@ module.exports = {
        
         db.Rescatado.findByPk(id, {
              include:[
-                 {all: true, nested: true}
-                ]
+                 {association: 'comentarios', include: {association: 'usuarios'}
+                 }]   
             })
         .then(rescatado=> {
-                return res.send (rescatado)
-           
+
+            let comentarios = rescatado.comentarios
+
+            return res.render('product', {rescatado, comentarios})
         })
         .catch(error => console.log(error))
     },

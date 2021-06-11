@@ -24,12 +24,12 @@
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
-						<%  for(var i=0; i<4; i++){  %> 
+						<%  for(var i=0; i<comentarios.length; i++){ let usuario = comentarios[i].usuarios %> 
 						<article>
-							<img src="/images/users/user.jpg" alt="">
+							<img src="/images/users/<%= usuario.imagen %>" alt="">
 							<div class="data">
 								<p class="user">
-								<strong> <a href="/users"> Hola </a> </strong>
+								<strong> <a href="/users/<% usuario.id %>"> <%= usuario.nombre + usuario.apellido%> </a> </strong>
 								<%= comentarios[i].texto %>
 								</p>
 							</div>
