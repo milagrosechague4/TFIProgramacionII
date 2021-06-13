@@ -491,8 +491,11 @@ textarea.form-input {
 /*====== Profile ======*/
 .info-usuario{
   border-bottom: 1px solid #ccc;
-  padding-bottom: 30px;
+  padding-bottom: 10px;
   font-size: 16px;
+}
+.info-usuario li{
+  padding-bottom: 10px;
 }
 
 .foto-perfil{
