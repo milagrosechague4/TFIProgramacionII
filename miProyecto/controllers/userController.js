@@ -64,4 +64,26 @@ module.exports = {
            res.send('contraseñas no coinciden')
         }
     },
+    login: function(req, res) {
+        db.Usuario.findOne({
+            where: [{ email : req.body.email }]
+        })
+        .then(usuario =>{
+            //console.log(usuario+'-------------------');
+            //return res.send(usuario.id);
+            //console.log(usuario.id+'------------------------------');
+            if(usuario == null){
+                return res.send('Usuario o clave incorrecta')
+            }else{
+                if(bcrypjs.compareSync(req.body.password, usuario.password)){
+                    //Guardar al usuario que se está logueando
+                    req.session.Usuario = usuario;
+                
+                    return res.redirect('/')
+                }else{
+                    return res.send('Usuario o clave inválida');
+                }
+            }
+        })
+    }
 }
