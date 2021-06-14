@@ -12,6 +12,9 @@ module.exports = (sequelize, dataTypes) => {
         apellido: {
             type: dataTypes.STRING
         },
+        imagen:{
+            type: dataTypes.STRING
+        },
         fechaNacimiento: {
             type: dataTypes.DATE
         },
@@ -29,7 +32,7 @@ module.exports = (sequelize, dataTypes) => {
     }
     const Usuario = sequelize.define(alias, cols, config);
     Usuario.associate = function(models){
-        Usuario.belongsTo(models.Rescatado, {
+        Usuario.hasMany(models.Rescatado, {
             as : 'rescatados',
             foreignKey: 'usuarioId' 
         }),

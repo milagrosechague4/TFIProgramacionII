@@ -1,11 +1,5 @@
-//const rescatados = require('../modulos/rescatados');
-//const animalesArray = rescatados.animales;
-
 const db = require('../database/models')
-const op = db.sequelize.Op
-//const usuarios = require('../modulos/usuarios')
-//const usuariosArray = usuarios.index
-
+const Op = db.sequelize.Op
 
 let controller = {
     index: function(req, res) {
@@ -40,7 +34,7 @@ let controller = {
     search: function(req, res) {
 
             let buscar = req.query.search;
-            //return res.send(req.query.buscar);
+            //return res.send(buscar);
             //Aquí me dispongo a realizar mi tarea
             if(buscar === ''){
                 db.Rescatado.findAll()
@@ -60,11 +54,11 @@ let controller = {
                 .catch(error => console.log(error))
             }else{
                 db.Rescatado.findAll({
-                    where: [
+                    where: 
                         {
-                            nombre : {[op.like]: '%'+ buscar +'%'}
+                            nombre : {[Op.like]: `%${buscar}%`}
                         }
-                    ]})
+                    })
                 .then(respuesta =>{
                    
                     let perroArray = [];
