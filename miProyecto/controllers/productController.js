@@ -1,11 +1,5 @@
 const db = require('../database/models');
 const op = db.sequelize.Op
-//const rescatados = require('../modulos/rescatados');
-//const animalesArray = rescatados.animales;
-
-//const usuarios = require('../modulos/usuarios')
-//const usuariosArray = usuarios.index
-
 
 module.exports = { 
    // index: function(req, res) {

@@ -1,45 +1,35 @@
-const rescatados = require('../modulos/rescatados');
-const animalesArray = rescatados.animales;
-
-const usuarios = require('../modulos/usuarios')
-const usuariosArray = usuarios.index
-
 const db = require('../database/models');
 const bcrypjs = require('bcryptjs');
 const op = db.Sequelize.Op;
+
 module.exports = {
 
     index: (req, res)=>{
-        let usuario = usuariosArray[0]
-    return res.render('profile', {usuario, animalesArray})
-    },
+        let id = req.params.id;
 
-    show: function(req, res){
-        let id = req.params.id
-        let usuario ;
-
-        for(let i = 0; i < usuariosArray.length; i++){
-            if(usuariosArray[i].id == id){
-                usuario = usuariosArray[i]
-            } 
-        }
-
-        return res.render('profile', {usuario, animalesArray})
+        db.Usuario.findByPk(id, {
+            include:[
+                {association: 'rescatados'}
+            ]   
+           })
+       .then(usuario => {
+            let rescatado = usuario.rescatados
+            return res.render('profile', {usuario, rescatado})
+       })
     },
 
     update: function(req, res) {
 
         let id = req.params.id
-        let usuario ;
 
-        for(let i = 0; i < usuariosArray.length; i++){
-            if(usuariosArray[i].id == id){
-                usuario = usuariosArray[i]
-            } 
-        }
+        db.Usuario.findByPk(id)
+        .then( usuario=> {
 
-        return res.render('profile-edit', {usuario});
+            return res.render('profile-edit', {usuario});
+        })
+
     }, 
+
     create: (req,res) =>{
         //return res.send('Estoy el registro de usuarios');
         return res.render('register');
