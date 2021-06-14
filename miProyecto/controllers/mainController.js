@@ -1,5 +1,5 @@
 const db = require('../database/models')
-const Op = db.sequelize.Op
+const Op = db.Sequelize.Op
 
 let controller = {
     index: function(req, res) {
@@ -60,18 +60,7 @@ let controller = {
                         }
                     })
                 .then(respuesta =>{
-                   
-                    let perroArray = [];
-                    let gatoArray = [];
-
-                    respuesta.forEach(element =>{
-                        if (element.clase == 0){
-                            perroArray.push(element)
-                    } else {
-                        gatoArray.push(element)
-                    }
-                    })
-                    return res.render('search-results', {perroArray, gatoArray})
+                    return res.render('search-results', {respuesta})
                 })
                 .catch(error => console.log(error))
             }
