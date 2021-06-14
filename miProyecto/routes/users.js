@@ -7,5 +7,6 @@ var userController = require('../controllers/userController');
 router.get('/:id', userController.index);
 router.get('/profile-edit/:id', userController.update);
 router.post('/register',userController.register);
+router.post('/login', userController.login)
 
 module.exports = router;
