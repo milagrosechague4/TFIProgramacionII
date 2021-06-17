@@ -9,7 +9,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productRouter = require('./routes/product');
 var app = express();
-let cookieParser = require('cookie-parser')
+
 
 //Implementando express-session
 app.use(session({
