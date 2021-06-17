@@ -23,7 +23,7 @@ module.exports = {
         .catch(error => console.log(error))
     },
 
-    productAdd : (req,res)=> {
+    create : (req,res)=> {
         return res.render('product-add', {title : 'add'})
     },
 
