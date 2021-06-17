@@ -23,14 +23,14 @@ module.exports = {
         .catch(error => console.log(error))
     },
 
-    productAdd : (req,res)=> {
+    create : (req,res)=> {
         return res.render('product-add', {title : 'add'})
     },
 
     store : (req,res)=> {
        db.Rescatado.create({
            //id default si no se completa
-           idUsuario: 1,
+           usuarioId: 1,
            nombre: req.body.nombre, 
            fechaRescate: req.body.rescate,
            clase: 1,
@@ -43,7 +43,35 @@ module.exports = {
     },
 
     edit : (req,res)=> {
-        return res.render('product-edit', {title : 'edit'})
+        let rescatadoId = req.params.id
+
+        db.Rescatado.findByPk(rescatadoId)
+        .then(rescatado =>{
+           // return res.send(rescatado.imagen)
+            let rescatadoGuardar= {
+                nombre: req.body.nombre, 
+                fechaRescate: req.body.rescate,
+                imagen: '',
+                descripcion: req.body.descripcion,
+            }
+            
+            if(req.file == undefined){
+                rescatadoGuardar.imagen = rescatado.imagen 
+            }else{
+                rescatadoGuardar.imagen = req.file.filename
+            }
+
+            db.Rescatado.update(rescatadoGuardar,    
+            {
+                where: {
+                    id:  rescatadoId
+                }
+            })
+            .then(resultado=>{
+                return res.redirect('product')
+            })
+            .catch(error=> {console.log(error)})
+        }) 
     },
     
     

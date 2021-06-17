@@ -14,32 +14,32 @@
 				<h2 class="products-title">Editar Publicacion</h2>
 			</div>
 			<div>
-				<form action="/" method="GET" class="col-6">
+				<form action="/product/edit" method="POST" class="col-6">
 						
 					<div class="filas">
 						<div class="fila2">
 							<label>
 								Nombre <span class="req">*</span>
 							</label>
-							<input type="text"  />
+							<input type="text" name='nombre'/>
 						</div>	
 						<div class="fila2">
 							<label>
 								Fecha de nacimiento <span class="req">*</span>
 							</label>
-							<input type="number"  />
+							<input type="number" name='rescate' />
 						</div>
 						<div class="fila2">
 							<label>
 								Imagen <span class="req">*</span>
 							</label>
-							<input type="file"/>
+							<input type="file" name='imagen' accept="image/png, image/jpeg"/>
 						</div>
 						<div class="fila3">
 							<label>
 								Descripcion <span class="req">*</span>								
 							</label>
-							<input type="text"/>
+							<input type="text" name='descripcion'/>
 						</div>
 					</div>
                     <p>
