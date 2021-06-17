@@ -1,7 +1,6 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
-var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
@@ -10,6 +9,8 @@ var productRouter = require('./routes/product');
 
 
 var app = express();
+let session = require('express-session')
+let cookieParser = require('cookie-parser')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -19,6 +20,38 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session(
+  { secret:'petfinder',
+    resave: false,
+    saveUninitialized: true }
+));
+
+app.use(function(req,res,next){
+  console.log(req.cookies.usuarioId+'------------------------------');
+  
+  if(req.session.usuario === undefined && req.cookies.usuarioId != undefined){
+    usuario.findByPk(req.cookies.usuarioId)
+    .then(usuario =>{
+      req.session.usuario = usuario
+     next()
+    })
+  }else{
+    next()
+  }
+})
+
+//Middleware
+app.use(function(req,res,next){
+  
+  if(req.session.usuario != undefined){
+    res.locals.user = req.session.usuario;
+    console.log(res.locals.usuario.nombre+'------------------------------');
+  }
+  next();
+})
+
+
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 //cuando pongo localhost:3000/
