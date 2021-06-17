@@ -1,11 +1,8 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
-<<<<<<< HEAD
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
-=======
->>>>>>> 5d533d9e0b0fb4ee8cb208f40fb87baba4f6f38c
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
