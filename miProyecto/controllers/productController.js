@@ -30,7 +30,7 @@ module.exports = {
     store : (req,res)=> {
        db.Rescatado.create({
            //id default si no se completa
-           idUsuario: 1,
+           usuarioId: 1,
            nombre: req.body.nombre, 
            fechaRescate: req.body.rescate,
            clase: 1,
@@ -43,8 +43,38 @@ module.exports = {
     },
 
     edit : (req,res)=> {
-        return res.render('product-edit', {title : 'edit'})
+        db.Rescatado.findByPk(req.params.id).then(resultado =>{
+            return res.render('product-edit', {title : 'edit', producto: resultado})
+        })
     },
+
+    update : (req,res)=> {
+        db.Rescatado.update({
+            //id default si no se completa
+            nombre: req.body.nombre, 
+            fechaRescate: req.body.rescate,
+            descripcion: req.body.descripcion,
+            imagen: req.file.filename,
+        },{
+            where: {
+                id: req.body.id,
+            }
+        })
+        .then(resultados=>{
+         res.redirect ('/product/'+req.body.id)
+        })
+    },
+
+    destroy: (req,res)=>{
+        db.Rescatado.destroy({
+            where: [{
+                id: req.body.id,
+            }]
+        })
+        .then(()=>{
+            return res.redirect('/')
+        })
+    }
     
     
     

@@ -14,37 +14,38 @@
 				<h2 class="products-title">Editar Publicacion</h2>
 			</div>
 			<div>
-				<form action="/" method="GET" class="col-6">
+				<form action="/product/edit" method="POST" class="col-6" enctype="multipart/form-data">
 						
 					<div class="filas">
 						<div class="fila2">
 							<label>
 								Nombre <span class="req">*</span>
 							</label>
-							<input type="text"  />
+							<input type="text" name="nombre" value="<%= producto.nombre%>"/>
 						</div>	
 						<div class="fila2">
 							<label>
 								Fecha de nacimiento <span class="req">*</span>
 							</label>
-							<input type="number"  />
+							<input type="date" name="rescate" value="<%= producto.fechaRescate%>" />
 						</div>
 						<div class="fila2">
 							<label>
 								Imagen <span class="req">*</span>
 							</label>
-							<input type="file"/>
+							<input type="file" name="imagen" value="<%= producto.imagen%>"/>
 						</div>
 						<div class="fila3">
 							<label>
 								Descripcion <span class="req">*</span>								
 							</label>
-							<input type="text"/>
+							<input type="text" name="descripcion" value="<%= producto.descripcion%>"/>
 						</div>
 					</div>
+					<input type="hidden" name="id" value="<%= producto.id %> ">
                     <p>
 					<button type="submit" class="button button-block"> Publicar </button>	
-                    </p>
+					</p>
 				</form>						
 			</div>	
 		</div>
