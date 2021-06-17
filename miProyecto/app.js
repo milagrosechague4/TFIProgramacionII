@@ -9,7 +9,6 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productRouter = require('./routes/product');
 var app = express();
-let session = require('express-session')
 let cookieParser = require('cookie-parser')
 
 //Implementando express-session
