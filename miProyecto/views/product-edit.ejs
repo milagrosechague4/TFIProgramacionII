@@ -14,37 +14,54 @@
 				<h2 class="products-title">Editar Publicacion</h2>
 			</div>
 			<div>
+<<<<<<< HEAD
+				<form action="/product/edit" method="POST" class="col-6" enctype="multipart/form-data">
+=======
 				<form action="/product/edit" method="POST" class="col-6">
+>>>>>>> f840b683a69600a75cd55a7f98ea444499149398
 						
 					<div class="filas">
 						<div class="fila2">
 							<label>
 								Nombre <span class="req">*</span>
 							</label>
+<<<<<<< HEAD
+							<input type="text" name="nombre" value="<%= producto.nombre%>"/>
+=======
 							<input type="text" name='nombre'/>
+>>>>>>> f840b683a69600a75cd55a7f98ea444499149398
 						</div>	
 						<div class="fila2">
 							<label>
 								Fecha de nacimiento <span class="req">*</span>
 							</label>
-							<input type="number" name='rescate' />
+							<input type="date" name="rescate" value="<%= producto.fechaRescate%>" />
 						</div>
 						<div class="fila2">
 							<label>
 								Imagen <span class="req">*</span>
 							</label>
+<<<<<<< HEAD
+							<input type="file" name="imagen" value="<%= producto.imagen%>"/>
+=======
 							<input type="file" name='imagen' accept="image/png, image/jpeg"/>
+>>>>>>> f840b683a69600a75cd55a7f98ea444499149398
 						</div>
 						<div class="fila3">
 							<label>
 								Descripcion <span class="req">*</span>								
 							</label>
+<<<<<<< HEAD
+							<input type="text" name="descripcion" value="<%= producto.descripcion%>"/>
+=======
 							<input type="text" name='descripcion'/>
+>>>>>>> f840b683a69600a75cd55a7f98ea444499149398
 						</div>
 					</div>
+					<input type="hidden" name="id" value="<%= producto.id %> ">
                     <p>
 					<button type="submit" class="button button-block"> Publicar </button>	
-                    </p>
+					</p>
 				</form>						
 			</div>	
 		</div>

@@ -43,36 +43,38 @@ module.exports = {
     },
 
     edit : (req,res)=> {
-        let rescatadoId = req.params.id
-
-        db.Rescatado.findByPk(rescatadoId)
-        .then(rescatado =>{
-           // return res.send(rescatado.imagen)
-            let rescatadoGuardar= {
-                nombre: req.body.nombre, 
-                fechaRescate: req.body.rescate,
-                imagen: '',
-                descripcion: req.body.descripcion,
-            }
-            
-            if(req.file == undefined){
-                rescatadoGuardar.imagen = rescatado.imagen 
-            }else{
-                rescatadoGuardar.imagen = req.file.filename
-            }
-
-            db.Rescatado.update(rescatadoGuardar,    
-            {
-                where: {
-                    id:  rescatadoId
-                }
-            })
-            .then(resultado=>{
-                return res.redirect('product')
-            })
-            .catch(error=> {console.log(error)})
-        }) 
+        db.Rescatado.findByPk(req.params.id).then(resultado =>{
+            return res.render('product-edit', {title : 'edit', producto: resultado})
+        })
     },
+
+    update : (req,res)=> {
+        db.Rescatado.update({
+            //id default si no se completa
+            nombre: req.body.nombre, 
+            fechaRescate: req.body.rescate,
+            descripcion: req.body.descripcion,
+            imagen: req.file.filename,
+        },{
+            where: {
+                id: req.body.id,
+            }
+        })
+        .then(resultados=>{
+         res.redirect ('/product/'+req.body.id)
+        })
+    },
+
+    destroy: (req,res)=>{
+        db.Rescatado.destroy({
+            where: [{
+                id: req.body.id,
+            }]
+        })
+        .then(()=>{
+            return res.redirect('/')
+        })
+    }
     
     
     

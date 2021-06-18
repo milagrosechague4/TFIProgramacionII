@@ -13,7 +13,15 @@
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"> <%= rescatado.nombre %> </h2> 
 			<p class="product-detail-description">
+<<<<<<< HEAD
+				<a href="/product/edit">Editar</a>
+				<form action="/product/destroy" method="POST">
+					<input type="hidden" name="id" value="<%= rescatado.id %> ">				
+					<button type="submit" class="btn btn-outline-light"> <i class="fas fa-trash" style="color: #B99871;"></i></button>
+				</form>
+=======
 				<a href="/product/edit/<%= rescatado.id %>">Editar</a>
+>>>>>>> f840b683a69600a75cd55a7f98ea444499149398
 			</p>
 		</div>
 		<div class="product-detail">

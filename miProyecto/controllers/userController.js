@@ -44,7 +44,7 @@ module.exports = {
                 apellido : req.body.apellido,
                 fechaNacimiento : req.body.adn,
                 email : req.body.email,
-                password : bcrypjs.hashSync(req.body.password, 10)
+                contraseña : bcrypjs.hashSync(req.body.password, 10)
             })
             .then(()=>{
                 return res.redirect('/');
@@ -65,13 +65,13 @@ module.exports = {
             if(usuario == null){
                 return res.send('Usuario o clave incorrecta')
             }else{
-                if(bcrypjs.compareSync(req.body.password, usuario.password)){
+                if(bcrypjs.compareSync(req.body.password, usuario.contraseña)){
                     //Guardar al usuario que se está logueando
                     req.session.Usuario = usuario;
                 
                     return res.redirect('/')
                 }else{
-                    return res.send('Usuario o clave inválida');
+                    return res.send('Usuario o clave incorrecta');
                 }
             }
         })
