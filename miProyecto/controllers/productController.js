@@ -33,7 +33,7 @@ module.exports = {
            usuarioId: 1,
            nombre: req.body.nombre, 
            fechaRescate: req.body.rescate,
-           clase: 1,
+           clase: req.body.clase,
            descripcion: req.body.descripcion,
            imagen: req.file.filename,
        })

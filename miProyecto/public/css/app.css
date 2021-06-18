@@ -478,8 +478,19 @@ hr {
 }
 
 .error{
-  color: rgb(209, 0, 0);
-  font-size: 1.4em;
+  font-size: 3.4em;
+  font-weight: 400;
+  font-family: 'Bebas Neue', cursive;
+  color: black;
+  text-align: center;
+}
+
+.error2{
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.4em;
+  font-weight: 300;
+  color: black;
+  text-align: center;
 }
 
 textarea.form-input {
