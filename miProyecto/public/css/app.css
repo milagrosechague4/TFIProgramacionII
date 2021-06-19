@@ -208,7 +208,12 @@ hr {
   border-bottom: 1px solid var(--light-gray);
   min-height: 300px;
 }
-
+.product-box_image img{
+  min-height: 350px;
+  max-height: 350px;
+  min-width: 300px;
+  max-width: 300px;
+}
 .product-box_data {
   padding: 15px;
   position: relative;
@@ -582,3 +587,4 @@ textarea.form-input {
     margin: auto;
   }
 }
+
