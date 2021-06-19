@@ -51,7 +51,7 @@ module.exports = {
             })     
             .catch(error => console.log(error));
         }else{
-           res.send('contraseñas no coinciden')
+           return res.render('password-error')
         }
     },
     login: function(req, res) {

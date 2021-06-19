@@ -20,7 +20,7 @@
 }
 .fila{
   display: grid;
-  grid-template-columns: 200px 200px;
+  grid-template-columns: 230px 200px;
   margin-bottom: 10px;
 }
 .boton{
