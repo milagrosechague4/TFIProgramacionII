@@ -61,7 +61,7 @@ module.exports = {
             }
         })
         .then(resultados=>{
-         res.redirect ('/product/'+req.body.id)
+         res.redirect ('/'+req.body.id)
         })
     },
 
