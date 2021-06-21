@@ -17,7 +17,6 @@ module.exports = {
             return res.render('profile', {usuario, rescatado})
        })
     },
-
     update: function(req, res) {
 
         let id = req.params.id
@@ -68,7 +67,6 @@ module.exports = {
                 if(bcrypjs.compareSync(req.body.password, usuario.contraseña)){
                     //Guardar al usuario que se está logueando
                     req.session.Usuario = usuario;
-                
                     return res.redirect('/')
                 }else{
                     return res.send('Usuario o clave incorrecta');

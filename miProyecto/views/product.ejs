@@ -5,7 +5,11 @@
 
 <body>
 	<!-- Header -->
-	<%- include('./partials/headerLogueado')%>
+	<% if(locals.usuario) { %> 
+		<%- include('./partials/header')%>
+	<% } else { %> 
+		<%- include('./partials/headerLogueado') %> 
+	<% } %> 
 	<!-- /Header -->
 	
 	<!-- product detail -->
@@ -30,7 +34,7 @@
 					<section class="comments">
 						<%  for(var i=0; i<comentarios.length; i++){ let usuario = comentarios[i].usuarios %> 
 						<article>
-							<img src="/images/users/<%= usuario.imagen %>" alt="">
+							<img src="/images/users/<%= usuario.imagen %>" alt="" class="imgUsuario">
 							<div class="data">
 								<p class="user">
 								<strong> <a href="/users/<%= usuario.id %>"> <%= usuario.nombre + ' '+ usuario.apellido%> </a> </strong>
@@ -40,8 +44,8 @@
 						</article>
 						<% } %>
 					</section>
-					<form class="form" action="" method="POST">
-						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
+					<form class="form" action="/" method="POST">
+						<input class="form-input" type="text" placeholder="Agregar comentario" name="texto">
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 					</form>
 					<hr>

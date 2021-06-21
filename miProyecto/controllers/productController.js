@@ -17,8 +17,8 @@ module.exports = {
         .then(rescatado=> {
 
             let comentarios = rescatado.comentarios
-
             return res.render('product', {rescatado, comentarios})
+            
         })
         .catch(error => console.log(error))
     },
