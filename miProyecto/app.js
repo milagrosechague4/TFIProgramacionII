@@ -44,8 +44,8 @@ app.use(function(req,res,next){
 app.use(function(req,res,next){
   
   if(req.session.usuario != undefined){
-    res.locals.user = req.session.usuario;
-    console.log(res.locals.usuario.nombre+'------------------------------');
+    res.locals.usuario = req.session.usuario;
+    console.log(res.locals.usuario.nombre);
   }
   next();
 })
