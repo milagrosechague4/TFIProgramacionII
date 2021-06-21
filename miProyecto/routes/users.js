@@ -8,5 +8,5 @@ router.get('/:id', userController.index);
 router.get('/profile-edit/:id', userController.update);
 router.post('/register',userController.register);
 router.post('/login', userController.login)
-
+router.post('/logout', userController.logout)
 module.exports = router;

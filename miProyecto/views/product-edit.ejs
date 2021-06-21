@@ -15,6 +15,7 @@
 			</div>
 			<div>
 				<form action="/product/edit" method="POST" class="col-6" enctype="multipart/form-data">
+						
 					<div class="filas">
 						<div class="fila2">
 							<label>
@@ -39,7 +40,6 @@
 								Descripcion <span class="req">*</span>								
 							</label>
 							<input type="text" name="descripcion" value="<%= producto.descripcion%>"/>
-
 						</div>
 					</div>
 					<input type="hidden" name="id" value="<%= producto.id %> ">

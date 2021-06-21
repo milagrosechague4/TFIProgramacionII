@@ -6,6 +6,7 @@
 	<!-- Header --> 
 	<!-- ponerlo en tdoos menos en el header logeado, borrando el header--> 
 	<% if(locals.usuario) { %> 
+
 		<%- include('./partials/header')%>
 	<% } else { %> 
 		<%- include('./partials/headerLogueado') %> 

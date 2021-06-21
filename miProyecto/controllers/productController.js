@@ -2,9 +2,6 @@ const db = require('../database/models');
 const op = db.sequelize.Op
 
 module.exports = { 
-   // index: function(req, res) {
-   //     return res.render('product');
-   // },
 
     show : (req, res)=> {
         let id = req.params.id;
@@ -15,8 +12,7 @@ module.exports = {
                  }]   
             })
         .then(rescatado=> {
-
-            let comentarios = rescatado.comentarios
+           let comentarios = rescatado.comentarios
             return res.render('product', {rescatado, comentarios})
             
         })
@@ -24,7 +20,7 @@ module.exports = {
     },
 
     create : (req,res)=> {
-        return res.render('product-add', {title : 'add'})
+        return res.render('product-add')
     },
 
     store : (req,res)=> {
@@ -61,7 +57,7 @@ module.exports = {
             }
         })
         .then(resultados=>{
-         res.redirect ('/product/'+req.body.id)
+         res.redirect ('/'+req.body.id)
         })
     },
 
