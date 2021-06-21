@@ -30,7 +30,7 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: 'usuarioId'
         }),
         Comentario.belongsTo(models.Rescatado,{
-            as: 'rescatados',
+            as: 'comentarios',
             foreignKey: 'productId'
         })
     }
