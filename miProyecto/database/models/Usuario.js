@@ -37,7 +37,7 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: 'usuarioId' 
         }),
         Usuario.hasMany(models.Comentario,{
-            as: 'comentarios',
+            as: 'usuarios',
             foreignKey: 'usuarioId'
         })
     }

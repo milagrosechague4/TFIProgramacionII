@@ -56,7 +56,10 @@ let controller = {
                 db.Rescatado.findAll({
                     where: 
                         {
-                            nombre : {[Op.like]: `%${buscar}%`}
+                            [Op.or]: [
+                                {nombre : {[Op.like]: `%${buscar}%`}},
+                                {descripcion: {[Op.like]: `%${buscar}%`}}
+                            ] 
                         }
                     })
                 .then(respuesta =>{

@@ -5,7 +5,11 @@
 
 <body>
 	<!-- Header -->
-	<%- include('./partials/headerLogueado')%>
+	<% if(locals.usuario) { %> 
+		<%- include('./partials/header')%>
+	<% } else { %> 
+		<%- include('./partials/headerLogueado') %> 
+	<% } %> 
 	<!-- /Header -->
 	
 	<!-- product detail -->
@@ -13,7 +17,11 @@
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"> <%= rescatado.nombre %> </h2> 
 			<p class="product-detail-description">
-				<a href="/product/edit/<%= rescatado.id %>">Editar</a>
+				<a href="/product/edit">Editar</a>
+				<form action="/product/destroy" method="POST">
+					<input type="hidden" name="id" value="<%= rescatado.id %> ">				
+					<button type="submit" class="btn btn-outline-light"> <i class="fas fa-trash" style="color: #B99871;"></i></button>
+				</form>
 			</p>
 		</div>
 		<div class="product-detail">
@@ -26,7 +34,7 @@
 					<section class="comments">
 						<%  for(var i=0; i<comentarios.length; i++){ let usuario = comentarios[i].usuarios %> 
 						<article>
-							<img src="/images/users/<%= usuario.imagen %>" alt="">
+							<img src="/images/users/<%= usuario.imagen %>" alt="" class="imgUsuario">
 							<div class="data">
 								<p class="user">
 								<strong> <a href="/users/<%= usuario.id %>"> <%= usuario.nombre + ' '+ usuario.apellido%> </a> </strong>
@@ -36,8 +44,8 @@
 						</article>
 						<% } %>
 					</section>
-					<form class="form" action="" method="POST">
-						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
+					<form class="form" action="/" method="POST">
+						<input class="form-input" type="text" placeholder="Agregar comentario" name="texto">
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 					</form>
 					<hr>
