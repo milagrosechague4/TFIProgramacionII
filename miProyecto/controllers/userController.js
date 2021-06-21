@@ -17,22 +17,39 @@ module.exports = {
             return res.render('profile', {usuario, rescatado})
        })
     },
-    update: function(req, res) {
+    edit: function(req, res) {
 
         let id = req.params.id
 
         db.Usuario.findByPk(id)
         .then( usuario=> {
-
             return res.render('profile-edit', {usuario});
         })
 
     }, 
+    update: (req,res)=>{
+        db.Usuario.update({
+            //id default si no se completa
+            nombre: req.body.nombre, 
+            apellido:req.body.apellido,
+            fechaNacimiento: req.body.fechaNacimiento,
+            email: req.body.email,
+            imagen: req.file.filename,
+        },{
+            where: {
+                id: req.body.id,
+            }
+        })
+        .then(resultados=>{
+         return res.redirect ('/users/'+ req.body.id)
+        })
+    },
 
     create: (req,res) =>{
         //return res.send('Estoy el registro de usuarios');
         return res.render('register');
     },
+
     register: function(req, res) {
         let rectificar = req.body.rectificarPassword
         let contraseña = req.body.password
@@ -41,6 +58,7 @@ module.exports = {
             db.Usuario.create({
                 nombre : req.body.nombre,
                 apellido : req.body.apellido,
+                imagen: req.body.imagen,
                 fechaNacimiento : req.body.adn,
                 email : req.body.email,
                 contraseña : bcrypjs.hashSync(req.body.password, 10)

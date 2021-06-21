@@ -33,7 +33,7 @@ module.exports = (sequelize, dataTypes) => {
    
     Rescatado.associate = function(models){
         Rescatado.belongsTo(models.Usuario, {
-            as : 'rescatados',
+            as : 'rescatado',
             foreignKey: 'usuarioId' 
         }),
         Rescatado.hasMany(models.Comentario,{

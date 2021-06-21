@@ -8,15 +8,40 @@ module.exports = {
        
         db.Rescatado.findByPk(id, {
              include:[
-                 {association: 'comentarios', include: {association: 'usuarios'}
-                 }]   
+                {association: 'comentarios', include: {association: 'usuario'}
+                }]   
             })
         .then(rescatado=> {
-           let comentarios = rescatado.comentarios
+
+            let comentarios = rescatado.comentarios
             return res.render('product', {rescatado, comentarios})
             
         })
         .catch(error => console.log(error))
+    },
+
+    coment: (req, res)=>{
+        db.Comentario.create({
+            usuarioId: req.body.usuarioId,
+            texto: req.body.texto,
+            fechaCreacion: 00-00-00,
+            productId: req.body.productId,
+        })
+        .then(resultado=>{
+            let id = req.body.productId;
+       
+            db.Rescatado.findByPk(id, {
+             include:[
+                {association: 'comentarios', include: {association: 'usuario'}
+                }]   
+            })
+            .then(rescatado=> {
+
+                let comentarios = rescatado.comentarios
+                return res.render('product', {rescatado, comentarios}) 
+            })
+            .catch(error => console.log(error))
+        })
     },
 
     create : (req,res)=> {
@@ -57,7 +82,7 @@ module.exports = {
             }
         })
         .then(resultados=>{
-         res.redirect ('/'+req.body.id)
+         res.redirect ('/'+ req.body.id)
         })
     },
 
@@ -71,8 +96,6 @@ module.exports = {
             return res.redirect('/')
         })
     }
-    
-    
     
 }
 

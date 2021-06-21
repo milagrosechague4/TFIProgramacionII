@@ -21,39 +21,40 @@
 						<h2 class="products-title">Edita tu perfil</h2>
 					</div>
 					<div> 		
-						<form action="/" method="GET" class="col-6">
+						<form action="/users/edit" method="POST" class="col-6">
 		
 							<div class="filas">
 								<div class="fila">
 									<label>
-										Nombre Completo<span class="req">*</span>
+										Nombre <span class="req">*</span>
 									</label>
-									<input type="text"  />
+									<input type="text" name="nombre" value="<%= usuario.nombre%>" />
 								</div>	
+								<div class="fila">
+									<label for="apellido">
+										Apellido <span class="req">*</span>
+									</label>
+									<input type="text" name="apellido" value="<%= usuario.apellido%>">
+								</div>
+								<div class="fila2">
+									<label>
+										Imagen <span class="req">*</span>
+									</label>
+									<input type="file" name="imagen" value="<%= usuario.imagen%>" accept="image/png, image/jpeg"/>
+								</div>
 								<div class="fila">
 									<label>
 											Año de nacimiento <span class="req">*</span>
 									</label>
-									<input type="number"  />
+									<input type="number" name="fechaNacimiento" value="<%= usuario.fechaNacimiento%>" />
 								</div>
 								<div class="fila">
 									<label>
 										Email Address<span class="req">*</span>
 									</label>
-									<input type="email"/>
+									<input type="email" name="email" value="<%= usuario.email%>"/>
 								</div>
-								<div class="fila">
-									<label>
-										Contraseña anterior<span class="req">*</span>
-									</label>
-									<input type="password"/>
-								</div>
-								<div class="fila">
-									<label>
-										Nueva contraseña<span class="req">*</span>
-									</label>
-									<input type="password"/>
-								</div>
+								<input type="hidden" name="id" value="<%= usuario.id%>">
 							</div>
 							<p class="boton">			
 							<button type="submit" class="button button-block"> Empecemos </button>

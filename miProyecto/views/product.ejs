@@ -32,7 +32,7 @@
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
-						<%  for(var i=0; i<comentarios.length; i++){ let usuario = comentarios[i].usuarios %> 
+						<%  for(var i=0; i<comentarios.length; i++){ let usuario = comentarios[i].usuario %> 
 						<article>
 							<img src="/images/users/<%= usuario.imagen %>" alt="" class="imgUsuario">
 							<div class="data">
@@ -44,8 +44,9 @@
 						</article>
 						<% } %>
 					</section>
-					<form class="form" action="" method="POST">
-
+					<form class="form" action="/product/coment" method="POST">
+						<input type="hidden" name="usuarioId" value="2">
+						<input type="hidden" name="productId" value="<%= rescatado.id %>">
 						<input class="form-input" type="text" placeholder="Agregar comentario" name="texto">
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 					</form>
