@@ -31,7 +31,7 @@ module.exports = {
         db.Usuario.update({
             //id default si no se completa
             nombre: req.body.nombre, 
-            apellido:req.body.apellido,
+            apellido: req.body.apellido,
             fechaNacimiento: req.body.fechaNacimiento,
             email: req.body.email,
             imagen: req.file.filename,
@@ -64,14 +64,19 @@ module.exports = {
                 contraseña : bcrypjs.hashSync(req.body.password, 10)
             })
             .then(()=>{
-                return res.redirect('/');
+                return res.redirect('/login');
             })     
             .catch(error => console.log(error));
         }else{
            return res.render('password-error')
         }
     },
-    login: function(req, res) {
+
+    login: (req, res)=>{
+        return res.render('login')
+    }, 
+
+    ingresar: function(req, res) {
         db.Usuario.findOne({
             where: [{ email : req.body.email }]
         })
@@ -85,6 +90,9 @@ module.exports = {
                 if(bcrypjs.compareSync(req.body.password, usuario.contraseña)){
                     //Guardar al usuario que se está logueando
                     req.session.Usuario = usuario;
+                    if(req.body.recordarme){
+                        res.cookie('usuarioId', usuario.id, {maxAge : 1000*60*60*24})
+                    }
                     return res.redirect('/')
                 }else{
                     return res.send('Usuario o clave incorrecta');

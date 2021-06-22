@@ -4,39 +4,26 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var logger = require('morgan');
-
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var productRouter = require('./routes/product');
 var app = express();
 
+//Aqui llamo a mi modelo usuario
+const {Usuario}= require('./database/models')
 
 //Implementando express-session
-app.use(session({
-  secret: 'animales',
-  resave: false,
-  saveUninitialized: true
-}))
-
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
-
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(session(
   { secret:'petfinder',
     resave: false,
     saveUninitialized: true }
 ));
 
+app.use(cookieParser());
+
+//Funcion Middleware
 app.use(function(req,res,next){
   console.log(req.cookies.usuarioId+'------------------------------');
   
   if(req.session.usuario === undefined && req.cookies.usuarioId != undefined){
-    usuario.findByPk(req.cookies.usuarioId)
+    Usuario.findByPk(req.cookies.usuarioId)
     .then(usuario =>{
       req.session.usuario = usuario
      next()
@@ -46,7 +33,7 @@ app.use(function(req,res,next){
   }
 })
 
-//Middleware
+//Funcion middleware
 app.use(function(req,res,next){
   
   if(req.session.usuario != undefined){
@@ -56,8 +43,17 @@ app.use(function(req,res,next){
   next();
 })
 
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+var productRouter = require('./routes/product');
 
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 //cuando pongo localhost:3000/

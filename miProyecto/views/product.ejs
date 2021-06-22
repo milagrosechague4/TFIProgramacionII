@@ -6,9 +6,9 @@
 <body>
 	<!-- Header -->
 	<% if(locals.usuario) { %> 
-		<%- include('./partials/header')%>
+		<%- include('./partials/headerLogueado')%>
 	<% } else { %> 
-		<%- include('./partials/headerLogueado') %> 
+		<%- include('./partials/header') %> 
 	<% } %> 
 	<!-- /Header -->
 	

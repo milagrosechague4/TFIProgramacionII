@@ -16,7 +16,7 @@
 				<h2 class="products-title">Iniciar Sesion</h2>
 			</div>
 		<div>
-			<form action="/users/login" method="POST" class="col-6">
+			<form action="/users/ingresar" method="POST" class="col-6">
 
 				<div class="filas">
 					<div class="fila">
@@ -27,7 +27,10 @@
 						<label for="password" >Contraseña</label>
 						<input type="password" id="password" name="password" required>
 					</div>
-				</div>
+					<div class="clase">
+						<input type="checkbox" class="form-check-input" id="recordarme" name="recordarme">
+						<label class="" for="recordarme">Recordarme</label>
+					</div>
 				<p class="boton">		
 				<button type="submit" class="button button-block">Iniciar Sesion</button>
 				</p>			
