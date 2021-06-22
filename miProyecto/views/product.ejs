@@ -16,13 +16,20 @@
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"> <%= rescatado.nombre %> </h2> 
-			<p class="product-detail-description">
-				<a href="/product/edit">Editar</a>
-				<form action="/product/destroy" method="POST">
-					<input type="hidden" name="id" value="<%= rescatado.id %> ">				
-					<button type="submit" class="btn btn-outline-light"> <i class="fas fa-trash" style="color: #B99871;"></i></button>
-				</form>
-			</p>
+			<% if(locals.usuario) { %> 
+				<% if(locals.usuario.id == rescatado.usuarioId) { %> 
+				<p class="product-detail-description">
+					<a href="/product/edit">Editar</a>
+					<form action="/product/destroy" method="POST">
+						<input type="hidden" name="id" value="<%= rescatado.id %> ">				
+						<button type="submit" class="btn btn-outline-light"> <i class="fas fa-trash" style="color: #B99871;"></i></button>
+					</form>
+				</p>
+			<% }} else { %> 
+				<p class="product-detail-description">
+		
+				</p>
+			<% } %> 
 		</div>
 		<div class="product-detail">
 			<div class="row">
@@ -44,12 +51,16 @@
 						</article>
 						<% } %>
 					</section>
-					<form class="form" action="/product/coment" method="POST">
-						<input type="hidden" name="usuarioId" value="2">
-						<input type="hidden" name="productId" value="<%= rescatado.id %>">
-						<input class="form-input" type="text" placeholder="Agregar comentario" name="texto">
-						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-					</form>
+					<% if(locals.usuario) { %> 
+						<form class="form" action="/product/coment" method="POST">
+							<input type="hidden" name="usuarioId" value="<%= locals.usuario.id %>">
+							<input type="hidden" name="productId" value="<%= rescatado.id %>">
+							<input class="form-input" type="text" placeholder="Agregar comentario" name="texto">
+							<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+						</form>
+					<% } else { %> 
+						<p>Inicia sesion para dejar tu comentario</p>
+					<% } %>
 					<hr>
 				</div>
 			</div>

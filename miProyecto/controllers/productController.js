@@ -51,7 +51,7 @@ module.exports = {
     store : (req,res)=> {
        db.Rescatado.create({
            //id default si no se completa
-           usuarioId: 1,
+           usuarioId: req.body.usuarioId,
            nombre: req.body.nombre, 
            fechaRescate: req.body.rescate,
            clase: req.body.clase,
@@ -72,10 +72,12 @@ module.exports = {
     update : (req,res)=> {
         db.Rescatado.update({
             //id default si no se completa
+            usuarioId: req.body.usuarioId,
+            imagen: req.file.filename,
             nombre: req.body.nombre, 
             fechaRescate: req.body.rescate,
             descripcion: req.body.descripcion,
-            imagen: req.file.filename,
+            
         },{
             where: {
                 id: req.body.id,
