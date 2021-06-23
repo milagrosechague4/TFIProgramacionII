@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `petfinder` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+USE `petfinder`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: petfinder
@@ -53,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-06-22 21:54:24
+-- Dump completed on 2021-06-23 20:02:55

@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `petfinder` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+USE `petfinder`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: petfinder
@@ -33,7 +35,7 @@ CREATE TABLE `comentarios` (
   KEY `FK_896efc10-5257-4a6a-90f1-45cb2de11bfb` (`productId`),
   CONSTRAINT `FK_11e7a95a-2f43-4544-8b18-9bc712cb402a` FOREIGN KEY (`usuarioId`) REFERENCES `usuarios` (`id`),
   CONSTRAINT `FK_896efc10-5257-4a6a-90f1-45cb2de11bfb` FOREIGN KEY (`productId`) REFERENCES `rescatados` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -55,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-06-22 21:54:24
+-- Dump completed on 2021-06-23 20:02:55
