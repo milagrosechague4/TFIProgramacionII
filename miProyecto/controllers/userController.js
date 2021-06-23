@@ -89,7 +89,7 @@ module.exports = {
             }else{
                 if(bcrypjs.compareSync(req.body.password, usuario.contraseña)){
                     //Guardar al usuario que se está logueando
-                    req.session.Usuario = usuario;
+                    req.session.usuario = usuario;
                     if(req.body.recordarme){
                         res.cookie('usuarioId', usuario.id, {maxAge : 1000*60*60*24})
                     }
