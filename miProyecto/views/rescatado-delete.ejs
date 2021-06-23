@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head --> 
+<%- include('./partials/head')%>
+	<body>
+	<!-- Header --> 
+	<%- include('./partials/header')%>
+
+    <section class="row">
+        <h1 class="error" >Seguro que desea eliminar este rescatado?</h1>
+        <h2 class="error2">Rescatado: <%= rescatado.nombre %></h2>
+        <form action="/product/destroy" method="POST">
+            <button type="submit" class="btn btn-danger">Borrar definitivamente</button>
+        </form>
+        <div class="mt-2">
+        <a class="btn btn-primary" href="/rescatado/<%= rescatado.id %>">Volver</a>
+        </div>
+    </section>
+
+    <!-- footer -->
+	<%- include('./partials/footer')%>
+
+
+</body>

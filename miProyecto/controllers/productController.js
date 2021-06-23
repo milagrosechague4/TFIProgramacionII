@@ -88,6 +88,15 @@ module.exports = {
         })
     },
 
+    delete: (req, res)=>{
+        let id = req.params.id;
+        db.Rescatado.findByPk(id)
+        .then(rescatado =>{
+            return res.render('rescatado-delete',{rescatado})
+        })
+        .catch(error => console.log(error))
+    },
+
     destroy: (req,res)=>{
         db.Rescatado.destroy({
             where: [{

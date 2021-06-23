@@ -20,7 +20,7 @@
 				<% if(locals.usuario.id == rescatado.usuarioId) { %> 
 				<p class="product-detail-description">
 					<a href="/product/edit/<%= rescatado.id %>">Editar</a>
-					<form action="/product/destroy" method="POST">
+					<form action="/product/delete/<%= rescatado.id %>" method="GET">
 						<input type="hidden" name="id" value="<%= rescatado.id %> ">				
 						<button type="submit" class="btn btn-outline-light"> <i class="fas fa-trash" style="color: #B99871;"></i></button>
 					</form>
@@ -59,7 +59,9 @@
 							<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 						</form>
 					<% } else { %> 
-						<p>Inicia sesion para dejar tu comentario</p>
+						<div class="actions-list">
+							<p > Inicia sesion para dejar tu comentario</p>
+						</div>
 					<% } %>
 					<hr>
 				</div>

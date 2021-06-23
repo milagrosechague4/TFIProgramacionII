@@ -95,7 +95,7 @@ module.exports = {
                     }
                     return res.redirect('/')
                 }else{
-                    return res.send('Usuario o clave incorrecta');
+                    return res.render('login-error');
                 }
             }
         })
