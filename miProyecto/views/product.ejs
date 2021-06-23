@@ -19,7 +19,7 @@
 			<% if(locals.usuario) { %> 
 				<% if(locals.usuario.id == rescatado.usuarioId) { %> 
 				<p class="product-detail-description">
-					<a href="/product/edit">Editar</a>
+					<a href="/product/edit/<%= rescatado.id %>">Editar</a>
 					<form action="/product/destroy" method="POST">
 						<input type="hidden" name="id" value="<%= rescatado.id %> ">				
 						<button type="submit" class="btn btn-outline-light"> <i class="fas fa-trash" style="color: #B99871;"></i></button>
@@ -44,7 +44,7 @@
 							<img src="/images/users/<%= usuario.imagen %>" alt="" class="imgUsuario">
 							<div class="data">
 								<p class="user">
-								<strong> <a href="/users/<%= usuario.id %>"> <%= usuario.nombre + ' '+ usuario.apellido%> </a> </strong>
+								<strong> <a href="/users/perfil/<%= usuario.id %>"> <%= usuario.nombre + ' '+ usuario.apellido%> </a> </strong>
 								<%= comentarios[i].texto %>
 								</p>
 							</div>
