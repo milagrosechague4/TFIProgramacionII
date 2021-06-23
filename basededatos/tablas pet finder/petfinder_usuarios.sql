@@ -1,5 +1,3 @@
-/*--CREATE DATABASE  IF NOT EXISTS `petfinder` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
---USE `petfinder`; 
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: petfinder
@@ -28,11 +26,12 @@ CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(50) NOT NULL,
   `apellido` varchar(50) NOT NULL,
+  `imagen` varchar(50) NOT NULL,
   `fechaNacimiento` date NOT NULL,
   `email` varchar(100) NOT NULL,
   `contraseña` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +40,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Maria','Gutierrez','1978-07-03','mgutierrez@gmail.com','hola123'),(2,'Franco','Beslavsky','1999-09-01','beslaf@fibertel.com.ar','quetal321'),(3,'Lucas','Fernandez','1978-07-03','lfernandez@gmail.com','contraseña'),(4,'Santiago','Benitez','1993-09-02','santinob@gmail.com','43031278'),(5,'Teresa','Martinez','1989-05-19','teremartinez@gmail.com','47070229');
+INSERT INTO `usuarios` VALUES (1,'Maria','Gutierrez','user.jpg','1978-07-03','mgutierrez@gmail.com','hola123'),(2,'Juana','Beslavsky','user2.jpg','1999-09-01','beslaf@fibertel.com.ar','quetal321'),(3,'Lucas','Fernandez','user1.jpg','1978-07-03','lfernandez@gmail.com','contraseña'),(4,'Cate','Benitez','user3.jpg','1993-09-02','santinob@gmail.com','43031278'),(5,'Teresa','Martinez','user4.jpg','1989-05-19','teremartinez@gmail.com','47070229'),(12,'Milagros','Echague','','2000-11-03','miluechague@hotmail.com','$2a$10$5g40V17tA9rtu5DkW3PqweR.ZpNmgTq3uBmbOpVgBemIluNNghjtG'),(13,'Joaquin','Lopez','default-image.png','2021-06-07','joacolopez@gmail.com','$2a$10$OWLc6takSfocdMciIoqKxuJF8vc1aMEo6M74lTkwzvDaTJkDp7CRK'),(14,'Benjamin','Echague','default-image.png','2021-06-07','bechague@gmail.com.ar','$2a$10$pEwPFe0q6yjk9dQ.nFrjo.HK9ObH1DsblO3JF.FXqNYNqf0.AgBnm');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-04-25 21:27:39
+-- Dump completed on 2021-06-22 21:54:24
