@@ -24,11 +24,17 @@ module.exports = (sequelize, dataTypes) => {
         contraseña: {
             type: dataTypes.STRING
         },
+        createdAt: {
+            type: dataTypes.DATE
+        },
+        //updatedAt: {
+        //    type: dataTypes.DATE
+        //}
         
     }
     let config = {
         tableName: 'usuarios',
-        timestamps: false 
+        timestamps: true 
     }
     const Usuario = sequelize.define(alias, cols, config);
     Usuario.associate = function(models){

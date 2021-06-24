@@ -21,20 +21,22 @@
 							<label>
 								Nombre <span class="req">*</span>
 							</label>
-							<input type="text" name="nombre" value="<%= producto.nombre%>"/>
+							<input type="text" name="nombre" value="<%= producto.nombre %>"/>
 						</div>	
 						<div class="fila2">
 							<label>
 								Fecha de nacimiento <span class="req">*</span>
 							</label>
-							<input type="date" name="rescate" value="<%= producto.fechaRescate%>" />
+							<input type="date" name="rescate" value="<%= producto.fechaRescate %>" />
 						</div>
 						<div class="fila2">
 							<label>
 								Imagen <span class="req">*</span>
 							</label>
-							<input type="file" name="imagen" value="<%= producto.imagen%>"/>
+							<input type="file" name="imagen" />
 						</div>
+                        <input type="hidden"  name="oldImagen"  value="<%=producto.imagen%>">
+         
 						<div class="fila3">
 							<label>
 								Descripcion <span class="req">*</span>								

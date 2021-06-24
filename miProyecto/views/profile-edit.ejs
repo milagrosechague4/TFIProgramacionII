@@ -40,8 +40,9 @@
 									<label>
 										Imagen <span class="req">*</span>
 									</label>
-									<input type="file" name="imagen" value="<%= usuario.imagen %>" accept="image/png, image/jpeg"/>
+									<input type="file" name="imagen" accept="image/png, image/jpeg"/>
 								</div>
+								<input type="hidden"  name="oldImagen"  value="<%=usuario.imagen%>">
 								<div class="fila">
 									<label>
 											Año de nacimiento <span class="req">*</span>

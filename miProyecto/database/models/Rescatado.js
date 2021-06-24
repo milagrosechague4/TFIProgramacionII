@@ -23,17 +23,23 @@ module.exports = (sequelize, dataTypes) => {
         },
         descripcion: {
             type: dataTypes.INTEGER
+        },
+        createdAt: {
+            type: dataTypes.DATE
+        },
+        updatedAt: {
+            type: dataTypes.DATE
         }
     }
     let config = {
         tableName : 'rescatados',
-        timestamps: false,
+        timestamps: true,
     }
     const Rescatado = sequelize.define(alias, cols, config);
    
     Rescatado.associate = function(models){
         Rescatado.belongsTo(models.Usuario, {
-            as : 'rescatado',
+            as : 'producto',
             foreignKey: 'usuarioId' 
         }),
         Rescatado.hasMany(models.Comentario,{

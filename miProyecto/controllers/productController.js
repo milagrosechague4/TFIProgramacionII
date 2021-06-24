@@ -8,11 +8,10 @@ module.exports = {
        
         db.Rescatado.findByPk(id, {
              include:[
-                {association: 'comentarios', include: {association: 'usuario'}
-                }]   
+                {association: 'comentarios', include: {association: 'usuario'}},
+                {association: 'producto'}]   
             })
         .then(rescatado=> {
-
             let comentarios = rescatado.comentarios
             return res.render('product', {rescatado, comentarios})
             
@@ -23,17 +22,18 @@ module.exports = {
     coment: (req, res)=>{
         db.Comentario.create({
             usuarioId: req.body.usuarioId,
-            texto: req.body.texto,
-            fechaCreacion: 00-00-00,
             productId: req.body.productId,
+            texto: req.body.texto,
+            //createdAt:'',
+            
         })
         .then(resultado=>{
             let id = req.body.productId;
        
             db.Rescatado.findByPk(id, {
              include:[
-                {association: 'comentarios', include: {association: 'usuario'}
-                }]   
+                {association: 'comentarios', include: {association: 'usuario'}},
+                {association: 'producto'}]   
             })
             .then(rescatado=> {
 
@@ -64,27 +64,40 @@ module.exports = {
     },
 
     edit : (req,res)=> {
-        db.Rescatado.findByPk(req.params.id).then(resultado =>{
-            return res.render('product-edit', {title : 'edit', producto: resultado})
+        db.Rescatado.findByPk(req.params.id)
+        .then(resultado =>{
+            return res.render('product-edit', {producto: resultado})
         })
     },
 
     update : (req,res)=> {
+    
+        let id = req.body.id
+
         db.Rescatado.update({
             //id default si no se completa
             usuarioId: req.body.usuarioId,
-            imagen: req.file.filename,
+            imagen: req.file? req.file.filename: req.body.oldImagen,
             nombre: req.body.nombre, 
             fechaRescate: req.body.rescate,
             descripcion: req.body.descripcion,
-            
         },{
             where: {
                 id: req.body.id,
             }
         })
         .then(resultados=>{
-         res.redirect ('/'+ req.body.id)
+            db.Rescatado.findByPk(id, {
+                include:[
+                   {association: 'comentarios', include: {association: 'usuario'}},
+                   {association: 'producto'}]   
+               })
+               .then(rescatado=> {
+   
+                   let comentarios = rescatado.comentarios
+                   return res.render('product', {rescatado, comentarios}) 
+               })
+               .catch(error => console.log(error))
         })
     },
 

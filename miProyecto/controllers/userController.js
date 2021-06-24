@@ -9,12 +9,15 @@ module.exports = {
 
         db.Usuario.findByPk(id, {
             include:[
-                {association: 'rescatados'}
+                {association: 'rescatados'},
+                {association: 'usuarios'}
             ]   
            })
        .then(usuario => {
-            let rescatado = usuario.rescatados
-            return res.render('profile', {usuario, rescatado})
+           //console.log(usuario.rescatados.length)
+            //return res.send(usuario.rescatados)
+            //let rescatado = usuario.rescatados
+            return res.render('profile', {usuario})
        })
     },
     
@@ -27,22 +30,34 @@ module.exports = {
             return res.render('profile-edit', {usuario});
         })
 
-    }, 
+    },
+
     update: (req,res)=>{
+        let id = req.body.id
         db.Usuario.update({
             //id default si no se completa
             nombre: req.body.nombre, 
             apellido: req.body.apellido,
             fechaNacimiento: req.body.fechaNacimiento,
             email: req.body.email,
-            imagen: req.file.filename,
+            imagen: req.file? req.file.filename: req.body.oldImagen,
         },{
             where: {
                 id: req.body.id,
             }
         })
         .then(resultados=>{
-         return res.redirect ('/users/'+ req.body.id)
+            db.Usuario.findByPk(id, {
+                include:[
+                    {association: 'rescatados'},
+                    {association: 'usuarios'}
+                ]   
+               })
+           .then(usuario => {
+                //return res.send(usuario)
+                let rescatado = usuario.rescatados
+                return res.render('profile', {usuario, rescatado})
+           })
         })
     },
 
@@ -82,9 +97,6 @@ module.exports = {
             where: [{ email : req.body.email }]
         })
         .then(usuario =>{
-            //console.log(usuario+'-------------------');
-            //return res.send(usuario.id);
-            //console.log(usuario.id+'------------------------------');
             if(usuario == null){
                 return res.send('Usuario o clave incorrecta')
             }else{

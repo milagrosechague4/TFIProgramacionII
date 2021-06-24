@@ -15,7 +15,7 @@ var storage = multer.diskStorage({
   })
    
   var upload = multer({ storage: storage })
-
+//console.log(upload.single('imagen')+'--------------------------')
 /* GET home page. */ 
 router.get('/rescatado/:id', productController.show)
 router.post('/coment', productController.coment)
