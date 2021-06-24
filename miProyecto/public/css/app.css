@@ -548,7 +548,14 @@ textarea.form-input {
   margin-left: 25%;
   font-size: 30px;
 }
-
+/*====== Rescatado-delete ======*/
+.rowDelete{
+  width: 50%;
+  padding-left: 500px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
 
 /*====== Media-Queries ======*/
 @media (min-width: 768px) {
