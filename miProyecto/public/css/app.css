@@ -544,6 +544,10 @@ textarea.form-input {
   font-family: 'Roboto', sans-serif;
 }
 
+.nulo{
+  margin-left: 25%;
+  font-size: 30px;
+}
 /*====== Rescatado-delete ======*/
 .rowDelete{
   width: 50%;
@@ -551,7 +555,6 @@ textarea.form-input {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
-
 }
 
 /*====== Media-Queries ======*/
@@ -605,4 +608,5 @@ textarea.form-input {
     margin: auto;
   }
 }
+
 
