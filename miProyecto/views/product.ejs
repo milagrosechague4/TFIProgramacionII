@@ -20,8 +20,7 @@
 				<% if(locals.usuario.id == rescatado.usuarioId) { %> 
 				<p class="product-detail-description">
 					<a href="/product/edit/<%= rescatado.id %>">Editar</a>
-					<form action="/product/delete/<%= rescatado.id %>" method="GET">
-						<input type="hidden" name="id" value="<%= rescatado.id %> ">				
+					<form action="/product/delete/<%= rescatado.id %>" method="GET">				
 						<button type="submit" class="btn btn-outline-light"> <i class="fas fa-trash" style="color: #B99871;"></i></button>
 					</form>
 				</p>

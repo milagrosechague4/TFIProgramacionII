@@ -543,10 +543,12 @@ textarea.form-input {
 .info-usuario li{
   font-family: 'Roboto', sans-serif;
 }
+
 .nulo{
   margin-left: 25%;
   font-size: 30px;
 }
+
 
 /*====== Media-Queries ======*/
 @media (min-width: 768px) {

@@ -17,6 +17,7 @@ module.exports = {
             return res.render('profile', {usuario, rescatado})
        })
     },
+    
     edit: function(req, res) {
 
         let id = req.params.id
