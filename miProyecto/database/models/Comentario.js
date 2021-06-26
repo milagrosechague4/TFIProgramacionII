@@ -17,12 +17,17 @@ module.exports = (sequelize, dataTypes) => {
         createdAt: {
             type: dataTypes.DATE
         },
+        updatedAt:{
+            type: dataTypes.DATE
+        }
         
     }
     let config = {
         tableName: 'comentarios',
         timestamps: true,
+        underscored: false,
     }
+
     const Comentario = sequelize.define(alias, cols, config);
     
     Comentario.associate = function(models){
