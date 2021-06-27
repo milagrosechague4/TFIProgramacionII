@@ -16,7 +16,8 @@
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"> <%= rescatado.nombre %> </h2>  
-			<% if(locals.usuario.id == rescatado.usuarioId) { %> 
+			<% if(locals.usuario) { %> 
+			<% 	if(locals.usuario.id == rescatado.usuarioId) { %> 
 				<p class="product-detail-description">
 					<a href="/product/edit/<%= rescatado.id %>">Editar</a>
 					<form action="/product/delete/<%= rescatado.id %>" method="GET">				
@@ -27,7 +28,7 @@
 				<p class="product-detail-description">
 		
 				</p>
-			<% } %> 
+			<% }} %> 
 			<p class="product-detail-description">
 				Rescatado por <strong><%= rescatado.producto.nombre + ' ' + rescatado.producto.apellido %></strong>
 			</p>

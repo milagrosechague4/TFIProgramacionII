@@ -38,7 +38,7 @@ module.exports = {
             //id default si no se completa
             nombre: req.body.nombre, 
             apellido: req.body.apellido,
-            fechaNacimiento: req.body.fechaNacimiento,
+            fechaNacimiento: req.body? req.body.fechaNacimiento: req.body.oldFecha,
             email: req.body.email,
             imagen: req.file? req.file.filename: req.body.oldImagen,
         },{
@@ -98,7 +98,7 @@ module.exports = {
         })
         .then(usuario =>{
             if(usuario == null){
-                return res.send('Usuario o clave incorrecta')
+                return res.render('login-error')
             }else{
                 if(bcrypjs.compareSync(req.body.password, usuario.contraseña)){
                     //Guardar al usuario que se está logueando

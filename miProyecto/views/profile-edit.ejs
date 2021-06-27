@@ -21,7 +21,7 @@
 						<h2 class="products-title">Edita tu perfil</h2>
 					</div>
 					<div> 		
-						<form action="/users/edit" method="POST" class="col-6">
+						<form action="/users/edit" method="POST" class="col-6" enctype="multipart/form-data">
 		
 							<div class="filas">
 								<div class="fila">
@@ -47,8 +47,9 @@
 									<label>
 											Año de nacimiento <span class="req">*</span>
 									</label>
-									<input type="number" name="fechaNacimiento" value="<%= usuario.fechaNacimiento %>" />
+									<input type="number" name="fechaNacimiento"/>
 								</div>
+								<input type="hidden"  name="oldFecha"  value="<%=usuario.fechaNacimiento%>">
 								<div class="fila">
 									<label>
 										Email Address<span class="req">*</span>
