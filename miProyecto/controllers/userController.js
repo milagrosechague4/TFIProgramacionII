@@ -13,11 +13,11 @@ module.exports = {
                 {association: 'usuarios'}
             ]   
            })
-       .then(usuario => {
+       .then(Usuario => {
            //console.log(usuario.rescatados.length)
             //return res.send(usuario.rescatados)
             //let rescatado = usuario.rescatados
-            return res.render('profile', {usuario})
+            return res.render('profile', {Usuario})
        })
     },
     

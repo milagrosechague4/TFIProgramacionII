@@ -16,25 +16,25 @@
 	<section class="info-usuario container products-wrapper">
 		<div class="row">
 			<div class="img-container offset-3 col-2">
-				<img src="/images/users/<%= usuario.imagen %>" alt="foto de perfil" class="foto-perfil">
+				<img src="/images/users/<%= Usuario.imagen %>" alt="foto de perfil" class="foto-perfil">
 			</div>
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
-					<h1 class="main-title"> <%= usuario.nombre + ' ' + usuario.apellido %> 
-						<% if(locals.usuario.id == usuario.id) { %>
-							<a href="/users/profile-edit/<%= usuario.id %>">
+					<h1 class="main-title"> <%= Usuario.nombre + ' ' + Usuario.apellido %> 
+						<% if(locals.usuario) { %>
+							<% if(locals.usuario.id == Usuario.id) { %>
+							<a href="/users/profile-edit/<%= Usuario.id %>">
 								<i class="fas fa-cog"></i>
 							</a>
 						<% } else { %> 
 							<p></p>
-						<% } %> 
+						<% }} %> 
 					</h1>
 				</div>
 				<div>
 					<ul class="info-usuario">
-						<li>Email: <%= usuario.email %></li>
-						<li>Fecha de Nacimiento: <%= usuario.fechaNacimiento %></li>
-						<!--<li>Cantidad de comentarios: <%= //usuario.usuarios. %></li>-->
+						<li>Email: <%= Usuario.email %></li>
+						<li>Fecha de Nacimiento: <%= Usuario.fechaNacimiento %></li>
 					</ul>
 				</div>
 			</div>
@@ -45,24 +45,30 @@
 	<!-- Mis productos -->
 	<div class="container products-wrapper">
 		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Tus rescates con PetFinder</h2>
-			</div>
-
+			<% if(locals.usuario) { %>
+				<% if(locals.usuario.id == Usuario.id) { %>
+					<div class="col-12">
+						<h2 class="products-title">Tus rescates con PetFinder</h2>
+					</div>
+			<% } else { %> 
+				<div class="col-12">
+					<h2 class="products-title">Sus rescates con PetFinder</h2>
+				</div>
+			<% }} %> 
 			<!-- Show mis productos -->
-			<% if(usuario.rescatados.length == 0) { %> 
+			<% if(Usuario.rescatados.length == 0) { %> 
 				<div class="col-12 col-sm-6 col-lg-3"> </div>
 			<% }else{ %>
-				<%  for(let i=0; i<usuario.rescatados.length; i++){ %> 
+				<%  for(let i=0; i<Usuario.rescatados.length; i++){ %> 
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
-					<a href="/product/rescatado/<%= usuario.rescatados[i].id %>">
+					<a href="/product/rescatado/<%= Usuario.rescatados[i].id %>">
 						<figure class="product-box_image">
-							<img src="/images/products/<%= usuario.rescatados[i].imagen %>" alt="cafetera moulinex">
+							<img src="/images/products/<%= Usuario.rescatados[i].imagen %>" alt="cafetera moulinex">
 						</figure>
 						<article class="product-box_data">
-							<h2><%= usuario.rescatados[i].nombre %></h2>
-							<p><%= usuario.rescatados[i].descripcion %></p>
+							<h2><%= Usuario.rescatados[i].nombre %></h2>
+							<p><%= Usuario.rescatados[i].descripcion %></p>
 						</article>
 					</a>
 				</section>
